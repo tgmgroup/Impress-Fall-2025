@@ -1,0 +1,43 @@
+.left-menu-button-halloween {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    animation: glowing 1300ms infinite;
+}
+
+.left-menu-image-halloween {
+	border-radius: 0.1vw;
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	height: 2.7vw;
+	width: 2.7vw;
+	background-color: #f6d8ca;
+	object-fit: contain;
+    animation: glowing 1300ms infinite;
+}
+
+.left-menu-image-halloween:hover {
+	background-color: rgba(231, 181, 150, 0.884);
+	transition: background-color 0.2s;
+	height: 3.5vw;
+	width: 3.5vw;
+}
+
+.button {
+    animation: glowing 1300ms infinite;
+  }
+
+@keyframes glowing {
+    0% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+    50% {
+      background-color: #49e819;
+      box-shadow: 0 0 10px #49e819;
+    }
+    100% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+  }

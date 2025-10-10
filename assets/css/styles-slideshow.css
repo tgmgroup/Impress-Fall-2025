@@ -1,0 +1,184 @@
+/* --- styles-modal.css --- */
+/* --- Modal Slideshow Content --- */
+
+.modal-content-slideshow {
+	position: relative;
+	background-color: var(--bg-color-divs);
+	color: var(--text-color);
+	margin: auto;
+	padding: 1vw;
+	border: 0px solid #888;
+	width: 100%;
+	height: 100%;
+	box-shadow: var(--box-shadow);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.15s;
+}
+
+/* Slideshow container with flexbox */
+.slideshow-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	overflow: hidden	; 
+}
+
+.slide-content {
+	display: flex;
+	align-items: stretch; /* Ensures equal height */
+	justify-content: center;
+	padding: 0 0vh 0vh 0vh;
+	height: 90%;
+	padding-right: 15px;
+}
+
+/* Image styling */
+.slide-image {
+	vertical-align: middle;
+	box-shadow: var(--box-shadow);
+	max-width: 55%; /* Restrict image width to 55% */
+	max-height: inherit;
+	object-fit: cover;
+	flex: 1 1 auto; /* Flex-grow to match height with text container */
+}
+
+/* Text container styling with center alignment */
+.caption-container {
+	text-align: center;
+	box-shadow: var(--box-shadow);
+	background-color: #222;
+	/* padding: 5% 5%; */
+	color: white;
+	max-width: 45%; /* Restrict text width to 45% */
+	margin-left: 2vh; /* Adjust as necessary for spacing */
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	flex: 1 1 auto; /* Flex-grow to match height with image */
+}
+
+/* Number text (1/7 etc) */
+.numbertext {
+	color: rgb(251, 255, 180);
+	font-size: 2vh;
+	padding: 2vh 6vh;
+	position: absolute;
+}
+
+/* Hide the images by default */
+.mySlides1 {
+	display: none;
+	height: 100%; /* Full height of the modal */
+}
+
+/* Hide the images by default */
+.mySlides2 {
+	display: none;
+	height: 100%; /* Full height of the modal */
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+	cursor: pointer;
+}
+
+/* Add a transparency effect for thumbnail images */
+.demo {
+	opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+	opacity: 1;
+}
+
+/* Thumbnail container styling */
+.thumbnail-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5vh;
+}
+
+.thumbnail1 {
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.3s;
+	margin: 0 1vh;
+	max-width: 5vh; /* Adjust the size of the thumbnails */
+	max-height: 5vh;
+	object-fit: cover;
+
+	border: 2px solid transparent; /* Default transparent border */
+}
+
+.thumbnail1:hover,
+.active-thumbnail {
+	opacity: 1;
+	border-color: #ffffff; /* Highlight with a white border */
+}
+
+.thumbnail2 {
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.3s;
+	margin: 0 1vh;
+	max-width: 5vh; /* Adjust the size of the thumbnails */
+	max-height: 5vh;
+	object-fit: cover;
+
+	border: 2px solid transparent; /* Default transparent border */
+}
+
+.thumbnail2:hover,
+.active-thumbnail {
+	opacity: 1;
+	border-color: #ffffff; /* Highlight with a white border */
+}
+
+/* --- Media Queries --- */
+
+/* Landscape Orientation (Default styles seem landscape-first, so this might refine) */
+@media screen and (orientation: landscape) {
+	/* Styles specific to landscape */
+	/* Example: You might adjust grid columns or container sizes here */
+	/* The original rule is kept for reference, but check if #container base styles suffice */
+}
+
+/* Smaller Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+	.modal-content-slideshow {
+		padding-top: 60px; /* Adjust for mobile header */
+	}
+	.slideshow-container {
+		flex-direction: row;
+
+		max-height: 100%;
+
+		height: 100%;
+		overflow: auto;
+	}
+	.slide-content {
+		display: flex;
+		flex-direction: column;
+	}
+	/* Image styling */
+	.slide-image {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+	/* Text container styling with center alignment */
+	.caption-container {
+		padding: 5% 5%;
+		max-height: 100%;
+		max-width: 100%;
+		margin-left: 0vh; /* Adjust as necessary for spacing */
+
+	}
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Impress Magazine - Fall, 2025</title>
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		<link rel="icon" type="image/x-icon" href="/assets/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
+
+		<link href="/assets/css/styles-modal.css" rel="stylesheet" />
+		<link href="/assets/css/styles-about-blocks.css" rel="stylesheet" />
+
+		<script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem("theme");
+					const prefersDark = window.matchMedia(
+						"(prefers-color-scheme: dark)"
+					).matches;
+					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+						document.documentElement.classList.add("dark");
+					} else if (savedTheme === "light") {
+						document.documentElement.classList.remove("dark");
+					} else {
+						// Default to dark if nothing set and system isn't dark
+						document.documentElement.classList.add("dark");
+					}
+				} catch (e) {
+					console.error("Error applying initial theme class:", e);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<nav id="icon-nav">
+			<a
+				href="https://impress.isesaki.in"
+				aria-label="Impress Magazine Gallery"
+				class="slide-nav-trigger"
+				data-target-slide="slide-alpha"
+				>&#128213;</a
+			>
+			<a
+				href="index.html"
+				aria-label="Front Cover"
+				class="slide-nav-trigger"
+				data-target-slide="slide-beta"
+				>&#x23EA;</a
+			>
+			<a href="1.html" aria-label="1">&#x0031;</a>
+			<a href="1.html" aria-label="2">&#x0032;</a>
+			<a href="3.html" aria-label="3">&#x0033;</a>
+			<a href="3.html" aria-label="4">&#x0034;</a>
+			<a href="5.html" aria-label="5">&#x0035;</a>
+			<a href="5.html" aria-label="6">&#x0036;</a>
+			<a href="cover.html" aria-label="Back Cover">&#x23E9;</a>
+			<a href="about.html" aria-label="About">&#128209;</a>
+			<button id="theme-toggle" aria-label="Switch theme"></button>
+
+			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+		</nav>
+
+		<main id="hero">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left"></div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					id="page-content"
+					style="
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+					"
+					data-page-number="8"
+					data-prev-page="cover.html"
+					data-next-page="index.html"
+				>
+					<div class="left-content">
+						<div class="about-grid-container">
+							<div class="about-grid-item">
+								<h3 style="text-align: center">About <i>Impress</i></h3>
+								<p class="credit-text">
+									<i>Impress Magazine</i> is made with love by teachers in
+									Isesaki. It is a production of the Isesaki Board of Education.
+									The <i>Impress</i> online magazine, <i>Impress</i> smartphone
+									app, and <i>Impress</i> website were developed by Isesaki
+									English Media.
+								</p>
+							</div>
+							<div class="about-grid-item">
+								<h3 style="text-align: center">Privacy and Terms of Use</h3>
+
+								<p class="credit-text">
+									This app doesn't collect any personal information from you.
+									However, we do use analytics tools and cookies on our website,
+									and links to other websites may also collect user data. We are
+									not responsible for the content or privacy practices of any
+									linked sites. Underlined text links and buttons with the mouse
+									click icon (<img
+										src="/assets/nav-images/link.png"
+										style="height: 13px; width: 13px"
+									/>) open new tabs to these external sites. You can read more
+									about our
+									<a
+										href="https://isesaki.in/terms/"
+										class="credit-link"
+										target="_blank"
+										>terms of use</a
+									>
+									and our
+									<a
+										href="https://isesaki.in/privacy/"
+										class="credit-link"
+										target="_blank"
+										>privacy policy</a
+									>
+									at our website:
+									<a
+										href="https://in.isesaki.in/"
+										class="credit-link"
+										target="_blank"
+										>Isesaki.in</a
+									>
+								</p>
+							</div>
+
+							<div class="about-grid-item">
+								<h3 style="text-align: center">App Credits</h3>
+								<p class="credit-text">
+									A big thanks to the producers of audio and image files used in
+									this app.
+								</p>
+								<ul>
+									<li style="margin: 1vw; text-align: justify">
+										<em>Computer Wav</em>, from
+										<a
+											href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=14702"
+											class="credit-link"
+											target="_blank"
+											>Pixabay</a
+										>
+									</li>
+									<li style="margin: 1vw; text-align: justify">
+										<a
+											href="https://pixabay.com/users/raphaelsilva-4702998/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2935460"
+											class="credit-link"
+											target="_blank"
+											><em>Play Audio</em></a
+										> and
+										<a
+											href="https://pixabay.com/users/raphaelsilva-4702998/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2935470"
+											class="credit-link"
+											target="_blank"
+											><em>Stop Audio</em></a
+										>
+										from Raphael Silva on
+										<a
+											href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2935460"
+											class="credit-link"
+											target="_blank"
+											>Pixabay</a
+										>
+									</li>
+
+									<li style="margin: 1vw; text-align: justify">
+										<em>Sway Music</em> by
+										<a
+											href="https://pixabay.com/users/keyframe_audio-32058364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=134991"
+											class="credit-link"
+											target="_blank"
+											>Keyframe Audio</a
+										>
+										from
+										<a
+											href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=134991"
+											class="credit-link"
+											target="_blank"
+											>Pixabay</a
+										>
+									</li>
+									<li style="margin: 1vw; text-align: justify">
+										<em>Other Music</em>, by
+										<a
+											href="https://pixabay.com/users/p4lash-24520502/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=144238"
+											class="credit-link"
+											target="_blank"
+											>Palash Sunvaiya</a
+										>
+										from
+										<a
+											href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=144238"
+											class="credit-link"
+											target="_blank"
+											>Pixabay</a
+										>
+									</li>
+								</ul>
+							</div>
+							<div class="about-grid-item">
+								<h3 style="text-align: center">
+									Thank you for reading <i>Impress</i>!
+								</h3>
+								<p class="credit-text">
+									You can learn more about <i>Impress</i> or see our other
+									issues at our
+									<a href="https://in.isesaki.in/impress-gallery" target="_blank">website</a>.
+									You can also find worksheets, answers, and credits for images
+									and other resources used in this magazine issue at this
+									issue's
+									<a
+										href="https://sites.google.com/isesaki-school.ed.jp/impress-summer-2025"
+										target="_blank"
+										>material's page</a
+									>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item sidebar sidebar-right">
+					<!-- Buttons -->
+					<form
+						action="https://sites.google.com/isesaki-school.ed.jp/impress-summer-2025"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-2"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Materials for This Issue</h6>
+						</button>
+					</form>
+
+					<form
+						action="https://sites.google.com/isesaki-school.ed.jp/impress/contact"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-3"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Contact Us</h6>
+						</button>
+					</form>
+
+					<form
+						action="https://www.isesaki.in/privacy/"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-3"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Privacy Policy</h6>
+						</button>
+					</form>
+
+					<form
+						action="https://www.isesaki.in/terms/"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-3"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Terms of Use</h6>
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<button id="prev-portrait" aria-label="Previous Slide">&lt;</button>
+			<button id="next-portrait" aria-label="Next Slide">&gt;</button>
+		</main>
+
+		<canvas id="snowfall"></canvas>
+
+		<script src="/assets/scripts/scripts-snow.js" defer></script>
+		<script src="/assets/scripts/scripts-magazine-nav.js"></script>
+	</body>
+</html>

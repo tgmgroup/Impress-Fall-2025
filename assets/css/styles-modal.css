@@ -1,0 +1,315 @@
+/* --- styles-modal.css --- */
+/* --- Modal Styles --- */
+
+/* ==========================================================================
+   1. Font Setup
+   ========================================================================== */
+
+@font-face {
+	font-family: "Klee One";
+	src: url("/assets/font/kleeone_regular.ttf") format("truetype");
+	font-display: swap; /* Improves perceived performance */
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("/assets/font/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap; /* Improves perceived performance */
+}
+
+/* ==========================================================================
+   2. Hidden Text (Modal) Styles
+   ========================================================================== */
+
+.hidden-text {
+	/* Serves as the modal background/overlay */
+	display: none; /* Hidden by default, shown via JS */
+	position: fixed; /* Cover viewport */
+	z-index: 9; /* High stack order */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* Scroll if content overflows */
+	background-color: var(--bg-color-divs);
+	color: var(--text-color); /* Default text color for overlay (if any) */
+	/* Centering for the modal-content box */
+	/* display: flex; /* Use flex to center modal-content */
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* Note: Padding-top method also works if flex is not desired */
+	padding-top: 0vh; /* Adjust as needed for vertical position */
+	padding-left: 60px; /* Adjust as needed for horizontal position */
+
+	font-family: "Klee One", cursive;
+}
+
+.modal-content {
+	position: relative; /* Needed for absolute positioning of close button */
+	background-color: var(--bg-color-divs);
+	color: var(--text-color); /* Text color inside modal */
+	margin: auto; /* Centered horizontally */
+	padding: 1%; /* Padding applied to header/body/footer */
+	border: 0px solid #888;
+	width: 100%; /* Responsive width */
+	height: 100%;
+
+	/* max-width: 800px;  Optional max-width */
+
+	animation: animatetop 0.15s;
+}
+
+/* Text container with flexbox */
+.text-container {
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	box-shadow: var(--box-shadow);
+}
+
+/* Modal Animation */
+@keyframes animatetop {
+	from {
+		top: -300px; /* Start off-screen */
+		opacity: 0;
+	}
+	to {
+		top: 0; /* End at final position */
+		opacity: 1;
+	}
+}
+/* Add vendor prefix if needed for older browsers */
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.modal-header {
+	padding: 1vw 1.5vw; /* Use vw or px */
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	position: relative; /* Context for close button */
+	height: 5%;
+	box-shadow: var(--box-shadow);
+}
+
+.modal-body {
+	padding: 1vw 1.5vw;
+	/* height: 90vh; */ /* Careful with fixed vh heights inside modals, */
+	/* consider max-height and overflow: auto instead */
+	/* max-height: 75vh;  Example max height */
+	overflow-y: auto; /* Allow scrolling within modal body */
+	overflow-x: hidden; /* Prevent horizontal overflow */
+	padding-left: 1rem;
+	height: 85%;
+
+	color: var(--text-color);
+	background-color: var(--bg-color-text-divs);
+}
+
+.modal-footer {
+	padding: 1vw 1.5vw;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	height: 10%;
+	box-shadow: var(--box-shadow);
+}
+
+.close {
+	/* Modal Close Button */
+	color: var(--text-color); /* Lighter default color on dark header */
+	position: absolute;
+	top: 15%; /* Adjust positioning */
+	right: 1.5vw; /* Adjust positioning */
+	font-size: 20px; /* Adjust size */
+	font-weight: bold;
+	line-height: 1; /* Ensure consistent vertical alignment */
+	cursor: pointer;
+	transition: color 0.2s;
+	z-index: 10; /* Ensure it's above other content */
+}
+
+.close:hover,
+.close:focus {
+	color: var(--text-color); /* Brighter white on hover */
+	text-decoration: none;
+}
+
+/* Modal Play Buttons */
+.modal-play,
+.modal-play-left {
+	color: var(--text-color); /* Match close button style */
+	position: absolute;
+
+	top: 0.8%; /* Adjust positioning */
+
+	font-size: 20px; /* Adjust size */
+	font-weight: bold;
+	cursor: pointer;
+	transition: color 0.2s;
+	z-index: 10; /* Ensure it's above other content */
+}
+
+.modal-play {
+	/*left: auto;  Let right positioning take effect */
+	right: 5vw; /* Position relative to the right side */
+}
+
+.modal-play-left {
+	left: 1.5vw; /* Position relative to the left side */
+}
+
+.modal-play:hover,
+.modal-play:focus,
+.modal-play-left:hover,
+.modal-play-left:focus {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+/* --- Lightbox/Slideshow Styles --- */
+
+.mySlides {
+	display: none; /* Hidden by default */
+	height: 100%; /* Full height of the modal */
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%; /* Center vertically */
+	transform: translateY(-50%); /* Precise vertical centering */
+	width: auto;
+	padding: 16px; /* Use px or rem for controls */
+	color: var(--text-color);
+	font-weight: bold;
+	font-size: 20px; /* Use px or rem */
+	transition: background-color 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+	z-index: 10; /* Ensure they are above slide content */
+}
+
+/* Position the buttons */
+.prev {
+	left: calc(0px + 15px);
+	border-radius: 3px 0 0 3px; /* Flipped radius */
+}
+.next {
+	right: calc(0px + 15px);
+	border-radius: 0 3px 3px 0; /* Original radius */
+}
+
+/* Hover effect */
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+	color: var(--text-color);
+	font-size: 12px; /* Use px or rem */
+
+	position: absolute;
+	top: 0.8%; /* Adjust positioning */
+	right: 6vw; /* Adjust positioning */
+
+	z-index: 6; /* Ensure it's above the image */
+}
+
+/* Caption Text */
+.caption-container {
+	text-align: center;
+	background-color: var(--bg-color-text-divs);
+	padding: 2px 16px;
+	color: var(--text-color);
+}
+
+/* Thumbnail/Demo images */
+.demo {
+	opacity: 0.6;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.active, /* Class for active thumbnail */
+  .demo:hover {
+	opacity: 1;
+}
+
+/* Optional image styles */
+img {
+	/* Fix potential gap below images */
+	vertical-align: middle;
+	/* margin-bottom: -4px; */ /* vertical-align is usually better */
+}
+
+img.hover-shadow {
+	transition: box-shadow 0.3s;
+}
+
+.hover-shadow:hover {
+	box-shadow: var(--box-shadow);
+}
+
+/* --- Media Queries --- */
+
+/* Landscape Orientation (Default styles seem landscape-first, so this might refine) */
+@media screen and (orientation: landscape) {
+	/* Styles specific to landscape */
+	/* Example: You might adjust grid columns or container sizes here */
+	/* The original rule is kept for reference, but check if #container base styles suffice */
+}
+
+/* Smaller Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+	.hidden-text {
+		padding-left: 0px;
+	}
+
+	/* Position the buttons */
+	.prev {
+		left: calc(0px + 15px);
+	}
+	.next {
+		right: calc(0px + 15px);
+	}
+	.numbertext {
+		top: calc(50px + 0%);
+	}
+
+	/* Modal Play Buttons */
+
+	.modal-play-left {
+		top: calc(5px + .1rem); /* Adjust positioning */
+
+		font-size: 10px; /* Match close button size - 2.5vw;*/
+	}
+
+	.modal-play {
+		top: calc(60px + 0.8%); /* Adjust positioning */
+		right: calc(5px + 5vw); /* Position relative to the right side */
+		font-size: 10px; /* Match close button size - 2.5vw;*/
+	}
+
+	.modal-play-left {
+		left: calc(5px + 1.5vw); /* Position relative to the left side */
+	}
+
+	.text-container {
+		padding-top: calc(60px + 0%); /* Adjust positioning */
+	}
+}

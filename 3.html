@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Impress Magazine - Fall, 2025</title>
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		<link rel="icon" type="image/x-icon" href="/assets/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
+
+		<link href="/assets/css/styles-slideshow.css" rel="stylesheet" />
+
+		<link href="/assets/css/styles-tooltip.css" rel="stylesheet" />
+		<link href="/assets/css/styles-modal.css" rel="stylesheet" />
+		<link href="/assets/css/styles-modal-split.css" rel="stylesheet" />
+
+		<script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem("theme");
+					const prefersDark = window.matchMedia(
+						"(prefers-color-scheme: dark)"
+					).matches;
+					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+						document.documentElement.classList.add("dark");
+					} else if (savedTheme === "light") {
+						document.documentElement.classList.remove("dark");
+					} else {
+						// Default to dark if nothing set and system isn't dark
+						document.documentElement.classList.add("dark");
+					}
+				} catch (e) {
+					console.error("Error applying initial theme class:", e);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<nav id="icon-nav">
+			<a
+				href="https://impress.isesaki.in"
+				aria-label="Impress Magazine Gallery"
+				class="slide-nav-trigger"
+				data-target-slide="slide-alpha"
+				>&#128213;</a
+			>
+			<a
+				href="index.html"
+				aria-label="Front Cover"
+				class="slide-nav-trigger"
+				data-target-slide="slide-beta"
+				>&#x23EA;</a
+			>
+			<a href="1.html" aria-label="1">&#x0031;</a>
+			<a href="1.html" aria-label="2">&#x0032;</a>
+			<a href="3.html" aria-label="3">&#x0033;</a>
+			<a href="3.html" aria-label="4">&#x0034;</a>
+			<a href="5.html" aria-label="5">&#x0035;</a>
+			<a href="5.html" aria-label="6">&#x0036;</a>
+			<a href="cover.html" aria-label="Back Cover">&#x23E9;</a>
+			<a href="about.html" aria-label="About">&#128209;</a>
+			<button id="theme-toggle" aria-label="Switch theme"></button>
+
+			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+		</nav>
+
+		<main id="hero">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left"></div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					id="page-content"
+					style="
+						background-image: url('/assets/Web/page034.jpg');
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+					"
+					data-page-number="3"
+					data-prev-page="1.html"
+					data-next-page="5.html"
+					data-landscape-bg="/assets/Web/page034.jpg"
+					data-portrait-left="/assets/Web/page03.jpg"
+					data-portrait-right="/assets/Web/page04.jpg"
+				>
+					<div class="left-content">
+						<div class="items hidden-text" id="text1-1">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="text-container">
+									<div class="modal-header">
+										<span
+											class="close clickable"
+											onClick="ResetPlayAndShowWithNav('audio1-1', 'text1-1', 'play1-1', 'prev-portrait', 'next-portrait'), ResetPlayAndShowWithNav('audio1-1a', 'text1-1', 'play1-1a', 'prev-portrait', 'next-portrait')"
+											>&times;</span
+										>
+										<span
+											class="modal-play-left clickable"
+											onClick="PlaySoundWithControls('audio1-1a', 'play1-1a')"
+											><img
+												id="play1-1a"
+												class="audio-button-image clickable"
+												src="/assets/nav-images/play-g79150a13d_1280.png"
+										/></span>
+									</div>
+
+									<div class="modal-body">
+										<h3>The Wonderful World of Slang</h3>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											Hello! Welcome to the wonderful world of slang! Have you
+											ever heard of American slang? These are
+											<span class="tooltip"
+												>trendy<span class="tooltiptext"
+													>流行の・トレンディ</span
+												></span
+											>
+											words. And they are only used by a
+											<span class="tooltip"
+												>certain<span class="tooltiptext">特定の</span></span
+											>
+											<span class="tooltip"
+												>society<span class="tooltiptext">社会</span></span
+											>,
+											<span class="tooltip"
+												>class<span class="tooltiptext">階級</span></span
+											>, or group of people. We will talk about five examples of
+											American slang. Try reading and guessing the meaning!
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											First, <strong>JK</strong>. In the case of Japan, it means
+											“high school girl.” However, it is an
+											<span class="tooltip"
+												>abbreviation<span class="tooltiptext">略語</span></span
+											>
+											for <strong>Just Kidding</strong>. We can use it when we
+											talk with our friends. For example: A: Your mom is so
+											pretty! B: Really? A: JK!
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											Second, <strong>good egg</strong>. It means
+											<strong>a good person</strong>, a
+											<span class="tooltip"
+												>trustworthy<span class="tooltiptext"
+													>信頼できる</span
+												></span
+											>
+											person, a kind person. This can be used when
+											<span class="tooltip"
+												>complimenting<span class="tooltiptext"
+													>褒め言葉・ 褒める</span
+												></span
+											>
+											another person. An example is, "He’s a real good egg." But
+											it's mostly used to
+											<span class="tooltip"
+												>refer<span class="tooltiptext">参考にする</span></span
+											>
+											to men.
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											Third, <strong>over the moon</strong>. It means to be so
+											happy that you feel like you could fly to the moon. For
+											example: “She was over the moon when she
+											<span class="tooltip"
+												>received<span class="tooltiptext"
+													>受け取る (get)</span
+												></span
+											>
+											the
+											<span class="tooltip"
+												>acceptance letter<span class="tooltiptext"
+													>承諾書</span
+												></span
+											>
+											from the university.”
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											Fourth, <strong>ILY</strong>. When we talk with friends,
+											we often use this abbreviation for
+											<strong>I love you</strong>. It is often used to
+											<span class="tooltip"
+												>convey<span class="tooltiptext">伝える</span></span
+											>
+											feelings between close friends or lovers. “Thanks for
+											always being there for me. ILY!”
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											Last, <strong>big gun</strong>. It means
+											<strong>big</strong> or <strong>important people</strong>.
+											As an example, we use it like this: "He is a big gun in
+											this company.”
+										</p>
+										<p
+											style="
+												font-size: 1.45rem;
+												text-indent: 1rem;
+												margin-top: 0.5rem;
+												padding: 0rem;
+												text-align: justify;
+											"
+										>
+											How was the American slang? Are they different from
+											Japanese slang? What kind of slang do we use in Japan? And
+											what are some examples of it? We think it's interesting
+											that American slang has different meanings from their
+											<span class="tooltip"
+												>literal<span class="tooltiptext"
+													>文字通りの</span
+												></span
+											>
+											<span class="tooltip"
+												>translations<span class="tooltiptext">翻訳</span></span
+											>. Let’s all learn more about American slang and try using
+											them. Until next time!
+										</p>
+									</div>
+									<div class="modal-footer"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="items hidden-text" id="text1-2">
+							<!-- Modal content -->
+							<div class="modal-content-slideshow">
+								<div class="modal-header">
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShowWithNav('audio1-2', 'text1-2', 'play1-2','prev-portrait', 'next-portrait')"
+										>&times;</span
+									>
+								</div>
+
+								<div class="modal-body">
+									<!-- Add the image slideshow here -->
+									<div id="slideshow-container2" class="slideshow-container">
+										<!-- Slides -- Change for SlideShow1 or 2 -->
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/1.png"
+													class="slide-image"
+													alt="Just Kidding!"
+												/>
+												<div class="caption-container">
+													<h1>Just Kidding!</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+
+													<div class="numbertext">1 / 9</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/2.png"
+													class="slide-image"
+													alt="Big Gun"
+												/>
+												<div class="caption-container">
+													<h1>Big Gun</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+													<div class="numbertext">2 / 9</div>
+												</div>
+											</div>
+										</div>
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/3.png"
+													class="slide-image"
+													alt="Good Egg"
+												/>
+												<div class="caption-container">
+													<h1>Good Egg</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+													<div class="numbertext">3 / 9</div>
+												</div>
+											</div>
+										</div>
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/4.png"
+													class="slide-image"
+													alt="Capping"
+												/>
+												<div class="caption-container">
+													<h1>Cap</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+													<div class="numbertext">4 / 9</div>
+												</div>
+											</div>
+										</div>
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/5.png"
+													class="slide-image"
+													alt="Ghost"
+												/>
+												<div class="caption-container">
+													<h1>Ghost</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+													<div class="numbertext">5 / 9</div>
+												</div>
+											</div>
+										</div>
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/6.png"
+													class="slide-image"
+													alt="On Fire"
+												/>
+												<div class="caption-container">
+													<h1>On Fire</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+													<div class="numbertext">6 / 9</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/7.png"
+													class="slide-image"
+													alt="Slay"
+												/>
+												<div class="caption-container">
+													<h1>Slay</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+
+													<div class="numbertext">7 / 9</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/8.png"
+													class="slide-image"
+													alt="Rizz"
+												/>
+												<div class="caption-container">
+													<h1>Rizz</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+
+													<div class="numbertext">8 / 9</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mySlides1">
+											<div class="slide-content">
+												<img
+													src="/assets/Web/Comics/9.png"
+													class="slide-image"
+													alt="Fire"
+												/>
+												<div class="caption-container">
+													<h1>Fire</h1>
+													<p
+														style="
+															font-size: 1.2rem;
+															line-height: 1.8;
+															text-align: justify;
+														"
+													>
+														&nbsp;
+													</p>
+
+													<div class="numbertext">9 / 9</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Navigation buttons -- Change for SlideShow1 or 2 -->
+										<a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides1(1)">&#10095;</a>
+
+										<br />
+									</div>
+								</div>
+
+								<!-- Modal footer -->
+								<div class="modal-footer">
+									<!-- Thumbnails -- Change for SlideShow1 or 2 -->
+									<div class="thumbnail-container">
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/1.png"
+											alt="Just Kidding!"
+											onclick="currentSlide1(1)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/2.png"
+											alt="Big Gun"
+											onclick="currentSlide1(2)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/3.png"
+											alt="Good Egg"
+											onclick="currentSlide1(3)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/4.png"
+											alt="Capping"
+											onclick="currentSlide1(4)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/5.png"
+											alt="Ghost"
+											onclick="currentSlide1(5)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/6.png"
+											alt="On Fire"
+											onclick="currentSlide1(6)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/7.png"
+											alt="Slay"
+											onclick="currentSlide1(7)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/8.png"
+											alt="Rizz"
+											onclick="currentSlide1(8)"
+										/>
+										<img
+											class="thumbnail1 thumbnail"
+											src="/assets/Web/Comics/9.png"
+											alt="Fire"
+											onclick="currentSlide1(9)"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Audio -->
+
+						<audio id="audio1-1" class="playondemand">
+							<!-- empty audio, just used to open the modal -->
+							<source src="./assets/audio/audio3-0.mp3" type="audio/mp3" />
+						</audio>
+
+						<audio
+							id="audio1-1a"
+							class="playondemand"
+							controls
+							style="display: none"
+						>
+							<source src="./assets/audio/audio3-1.mp3" type="audio/mpeg" />
+							Your browser does not support the audio element.
+						</audio>
+
+						<audio id="audio1-2" class="playondemand">
+							<!-- empty audio, just used to open the modal -->
+							<source src="./assets/audio/audio3-2.mp3" type="audio/mp3" />
+						</audio>
+					</div>
+				</div>
+
+				<div class="item sidebar sidebar-right">
+					<!-- Buttons for Intro Text -->
+
+					<button
+						class="center-items right-nav-buttons clickable"
+						type="button"
+						onClick="PlayAndShowWithNav('audio1-1', 'text1-1', 'play1-1', 'prev-portrait', 'next-portrait')"
+					>
+						<img
+							id="play1-1"
+							class="audio-button-image clickable"
+							src="/assets/nav-images/play-g79150a13d_1280.png"
+						/>
+						<h6 style="margin: auto">Full Text</h6>
+					</button>
+
+					<button
+						class="center-items right-nav-buttons clickable"
+						type="button"
+						onClick="PlayAndShowWithNav('audio1-2', 'text1-2', 'play1-2', 'prev-portrait', 'next-portrait')"
+					>
+						<img
+							id="play1-2"
+							class="audio-button-image clickable"
+							src="/assets/nav-images/play-g79150a13d_1280.png"
+						/>
+						<h6 style="margin: auto">Student Work Gallery</h6>
+					</button>
+				</div>
+			</div>
+
+			<button id="prev-portrait" aria-label="Previous Slide">&lt;</button>
+			<button id="next-portrait" aria-label="Next Slide">&gt;</button>
+		</main>
+
+		<canvas id="snowfall"></canvas>
+
+		<script src="/assets/scripts/scripts-snow.js" defer></script>
+		<script src="/assets/scripts/scripts-magazine-nav.js" defer></script>
+		<script
+			type="text/javascript"
+			src="/assets/scripts/scripts-slideshow-double.js"
+		></script>
+	</body>
+</html>

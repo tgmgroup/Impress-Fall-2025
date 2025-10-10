@@ -1,0 +1,1085 @@
+/* --- style.css --- */
+/* --- Combined styles for layout, theme, slides, toggles, and effects --- */
+
+/* ==========================================================================
+   1. FONT SETUP
+   ========================================================================== */
+
+@font-face {
+	font-family: "Klee One";
+	src: url("/assets/font/kleeone_regular.ttf") format("truetype");
+	font-weight: normal;
+	font-display: swap; /* Improves perceived performance */
+}
+
+@font-face {
+  font-family: "Klee One";
+  src: url("/assets/font/kleeone_semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("/assets/font/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap; /* Improves perceived performance */
+}
+
+/* ==========================================================================
+   3. GLOBAL RESETS & BASE STYLES
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0; /* Reset margins */
+	padding: 0; /* Reset paddings */
+	box-sizing: border-box;
+}
+
+/* --- Theme Variables --- */
+:root {
+	/* Light Mode Colors */
+	--bg-color: #f8f8f8;
+	--bg-color-divs: #b8b8b8;
+	--bg-color-text-divs: #f8f8f8d8;
+	--box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.015),
+		0 6px 20px 0 rgba(0, 0, 0, 0.015);
+	--text-color: #333333; /* Dark text for light mode */
+	--nav-bg: #e0e0e0;
+	--nav-bg-image: linear-gradient(203deg, #f4d54b 0%, #ff9b19 90%);
+	--nav-icon-color: #1a1201;
+	--link-text: #171418;
+	--link-hover-bg: #ffffffc2;
+	--cta-bg: var(--nav-icon-color);
+	--cta-text: var(--nav-bg); /* Light text for dark button in light mode */
+	--tooltip-color: rgb(144, 85, 2); /* Highlight the word */
+	--tooltip-text-color: #2f2e2e; /* Tooltip text color for light mode */
+	--tooltip-bg-color: #dddbdb; /* Tooltip background color for light mode */
+	--slide-button-bg: rgba(0, 0, 0, 0.3);
+	--slide-button-hover-bg: rgba(0, 0, 0, 0.6);
+	--slide-button-text: white;
+
+	/* --- Hero Gradient Colors (Light Mode - Slightly Brighter/Different Palette) --- */
+	--hero-grad-1: hsl(280, 48%, 74%); /* Muted Violet */
+	--hero-grad-2: hsl(240, 47%, 79%); /* Muted Blue */
+	--hero-grad-3: hsl(180, 40%, 78%); /* Muted Cyan */
+	--hero-grad-4: hsl(120, 47%, 79%); /* Muted Green */
+	--hero-grad-5: hsl(60, 46%, 84%); /* Muted Yellow */
+	--hero-grad-6: hsl(20, 53%, 84%); /* Muted Orange */
+
+	--hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.003); /* Shadow for light mode */
+	--hero-cta-bg: hsla(
+		0,
+		0%,
+		20%,
+		0.7
+	); /* Darker semi-transparent btn for light mode */
+	--hero-cta-text: white; /* Light text on btn */
+	--hero-cta-hover-bg: hsla(0, 0%, 10%, 0.8);
+}
+
+html.dark {
+	/* Dark Mode Colors */
+	--bg-color: #1a1a1a;
+	--bg-color-divs: #080707;
+	--bg-color-text-divs: #080707c8;
+	--box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.015),
+		0 6px 20px 0 rgba(255, 255, 255, 0.015);
+	--text-color: #e0e0e0; /* Light text for dark mode */
+	--nav-bg: #2c2c2c;
+	--nav-bg-image: linear-gradient(203deg, #0d0600 0%, #f27713 90%);
+	--nav-icon-color: #edebd3;
+	--link-text: #f6dbff;
+	--link-hover-bg: #000000ac;
+	--cta-bg: var(--nav-icon-color);
+	--cta-text: var(--nav-bg); /* Dark text for light button in dark mode */
+	--tooltip-color: rgb(235, 161, 97); /* Highlight the word */
+	--tooltip-text-color: #fff; /* Tooltip text color for dark mode */
+	--tooltip-bg-color: #2f2e2e; /* Tooltip background color for dark mode */
+	--slide-button-bg: rgba(255, 255, 255, 0.2);
+	--slide-button-hover-bg: rgba(255, 255, 255, 0.4);
+	--slide-button-text: white;
+
+	/* --- Hero Gradient Colors (Dark Mode - Original Dark Rainbow) --- */
+	--hero-grad-1: hsl(0, 64%, 6%); /* Dark Red */
+	--hero-grad-2: hsl(41, 66%, 9%); /* Dark Orange */
+	--hero-grad-3: hsl(80, 67%, 7%); /* Dark Yellow-Green */
+	--hero-grad-4: hsl(160, 68%, 6%); /* Dark Teal */
+	--hero-grad-5: hsl(220, 66%, 8%); /* Dark Blue */
+	--hero-grad-6: hsl(280, 68%, 6%); /* Dark Violet */
+
+	--hero-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); /* Shadow for dark mode */
+	--hero-cta-bg: hsla(
+		0,
+		0%,
+		100%,
+		0.75
+	); /* Lighter semi-transparent btn for dark mode */
+	--hero-cta-text: #1a1a1a; /* Dark text on btn */
+	--hero-cta-hover-bg: hsla(0, 0%, 100%, 0.9);
+}
+/* --- End Theme Variables --- */
+
+/* --- Base Styles --- */
+html,
+body {
+	height: 100%;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	background-color: var(--bg-color-divs);
+	color: var(--text-color); /* Default text color applies */
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Navigation Bar (Desktop - Default) --- */
+#icon-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 60px;
+	background-color: var(--nav-bg);
+	background-image: var(--nav-bg-image);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	gap: 12px;
+	z-index: 10;
+	transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease,
+		top 0.3s ease, right 0.3s ease, left 0.3s ease, bottom 0.3s ease,
+		flex-direction 0s;
+	box-shadow: 0vw 0.01vw 0.5vw rgba(0, 0, 0, 0.2);
+}
+/* Nav Links and Base Button Styles (Shared) */
+#icon-nav a,
+#icon-nav button {
+	color: var(--nav-icon-color);
+	font-size: 24px;
+	text-decoration: none;
+	padding: 8px;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s ease, color 0.3s ease;
+	border: none;
+	background: none;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	box-shadow: var(--box-shadow);
+}
+#icon-nav a:hover,
+#icon-nav button:hover {
+	background-color: var(--link-hover-bg);
+	box-shadow: var(--box-shadow);
+}
+/* Theme Toggle Button Specifics (Desktop) */
+#theme-toggle {
+	margin-top: auto;
+	box-shadow: var(--box-shadow);
+}
+/* Snow Toggle Button Specifics (Desktop) */
+#snow-toggle {
+	margin-top: 0;
+	box-shadow: var(--box-shadow);
+}
+
+/* --- Hero Section (Desktop - Default) --- */
+#hero {
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transition: padding-top 0.3s ease, padding-right 0.3s ease;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: relative;
+	overflow: hidden;
+	/* --- Animated Dark Rainbow Background --- */
+	/* Use CSS variables for gradient colors */
+	/* background: linear-gradient(
+		135deg,
+		var(--hero-grad-1),
+		var(--hero-grad-2),
+		var(--hero-grad-3),
+		var(--hero-grad-4),
+		var(--hero-grad-5),
+		var(--hero-grad-6),
+		var(--hero-grad-1)  Repeat first color for loop 
+	); */
+	background-size: 500% 500%;
+	animation: waveAnimation 10s ease infinite;
+	/* --- End Animated Background --- */
+}
+
+/* Ensure hero text uses theme text color but adds shadow for readability */
+#hero h1,
+#hero h2,
+#hero h3,
+#hero h4,
+#hero h5,
+#hero p {
+	color: var(--text-color); /* USE THEME VARIABLE */
+	text-shadow: var(--hero-text-shadow); /* Use theme-dependent shadow */
+	position: relative; /* Ensure text is layered above background */
+	z-index: 2;
+}
+/* Style hero CTA button using theme variables for its specific context */
+#hero .cta-button {
+	background-color: var(--hero-cta-bg);
+	color: var(--hero-cta-text);
+	text-shadow: none;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 2;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+#hero .cta-button:hover {
+	background-color: var(--hero-cta-hover-bg);
+}
+
+/* --- Slides --- */
+.slides-container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 200px;
+	position: relative;
+	z-index: 1; /* Behind text/buttons */
+	height: 100%; /* Ensure text is centered vertically */
+}
+.slide {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	width: 100%;
+	max-width: 600px;
+	animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide.active {
+	display: flex;
+}
+
+/* Call to Action Button in Slides */
+.cta-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: var(--cta-bg);
+	color: var(--cta-text);
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
+}
+
+.cta-button:hover {
+	opacity: 0.9;
+}
+
+.slide h2 {
+	font-size: 2rem;
+	margin-bottom: 0.8rem;
+	color: var(--text-color);
+	transition: color 0.3s ease;
+}
+
+.slide p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	color: var(--text-color);
+	transition: color 0.3s ease;
+}
+
+/* Slide Content styles are handled by the #hero selectors above */
+
+/* --- Slide Navigation Buttons (Prev/Next - Desktop Default) --- */
+#prev-slide,
+#next-slide {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--slide-button-bg);
+	color: var(--slide-button-text);
+	border: none;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	z-index: 5; /* Above slides, below nav */
+	transition: background-color 0.3s ease, color 0.3s ease, right 0.3s ease,
+		left 0.3s ease;
+}
+#prev-slide:hover,
+#next-slide:hover {
+	background-color: var(--slide-button-hover-bg);
+}
+#prev-slide {
+	left: calc(60px + 15px);
+}
+#next-slide {
+	right: calc(0px + 15px);
+}
+
+/* Slide Content styles are handled by the #hero selectors above */
+
+/* --- Slide Navigation Buttons (Prev/Next - Desktop Default) --- */
+#prev-portrait,
+#next-portrait {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--slide-button-bg);
+	color: var(--slide-button-text);
+	border: none;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	z-index: 5; /* Above slides, below nav */
+	transition: background-color 0.3s ease, color 0.3s ease, right 0.3s ease,
+		left 0.3s ease;
+}
+#prev-portrait:hover,
+#next-portrait:hover {
+	background-color: var(--slide-button-hover-bg);
+}
+#prev-portrait {
+	left: calc(60px + 15px);
+}
+#next-portrait {
+	right: calc(0px + 15px);
+}
+
+/* --- Snowfall Canvas --- */
+#snowfall {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1000;
+	/* display initial state set by JS */
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* Keyframes for Hero Background Animation */
+@keyframes waveAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* --- Main Layout Container --- */
+
+#container {
+	position: relative;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* height: 56.25vw;  16:9 aspect ratio (9/16 * 100) based on width */
+	max-height: 100vh; /* Prevent container from exceeding viewport height */
+	max-width: 100%; /* Prevent container from exceeding viewport width */
+	/* padding-bottom: 56.25%; */ /* Alternative aspect ratio method, usually used with height: 0 */
+	margin: 0.2vw;
+	overflow: hidden;
+	background-color: var(--bg-color-divs); /* Use theme variable */
+
+	/* Grid Layout Setup */
+	display: grid;
+	grid-template-columns: 65px 0vw 81vw 10vw; /* sidebar | gap | content | sidebar */
+	grid-template-areas: "sidebar-left gap-left content-center sidebar-right";
+	grid-gap: 0vw; /* Explicitly setting gap to 0 */
+}
+
+/* --- Grid Areas within #container --- */
+
+#container .sidebar-left {
+	grid-area: sidebar-left;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 1; /* Above gap, below content */
+	border-radius: 0.15vw;
+	/* Combined box-shadow rule */
+	/* box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5); */
+	/* Sidebar Gradient Coloring -- Change this for each issue */
+	/* Moved from separate .sidebar class for clarity as it applies here */
+	background-color: var(--bg-color-divs); /* Use theme variable */
+
+	padding: 1vw; /* Moved from .sidebar */
+}
+
+#container .gap-left {
+	grid-area: gap-left;
+	height: 100%;
+
+	z-index: 0; /* Lowest z-index */
+}
+
+#container .content-center {
+	grid-area: content-center;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	border: 0vw;
+	background-color: var(--bg-color-divs);
+	/* box-shadow: 0vw 0.01vw 0.5vw rgba(0, 0, 0, 0.2); */
+	z-index: 2; /* Highest z-index */
+	/* Example background commented out */
+	/* background-image: url('./Web/page01.jpg');
+	   background-size: contain;
+	   background-position: center;
+	   background-repeat: no-repeat; */
+}
+
+#container .sidebar-right {
+	grid-area: sidebar-right;
+	display: flex;
+	height: 100%;
+	align-items: start;
+	justify-content: start;
+	flex-direction: column;
+	z-index: 1; /* Above gap, below content */
+	border-radius: 0.15vw;
+	/* Combined box-shadow rule */
+	/* box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5); */
+	/* Sidebar Gradient Coloring -- Change this for each issue */
+	/* Moved from separate .sidebar class for clarity as it applies here */
+	background-color: var(--bg-color-divs);
+	padding-top: 7vh; /* Moved from .sidebar */
+	padding-inline: 15%;
+	gap: 5vh; /* Added gap between items */
+}
+
+/* --- Typography --- */
+/* Note: Using vw units for font-size provides fluid scaling but can lead */
+/* to accessibility issues (too large/small text) and ignores user preferences. */
+/* Consider using 'rem', 'em', or CSS clamp() for better control. */
+
+p {
+	font-size: 2vw;
+	line-height: 1.5;
+}
+
+.small-text {
+	font-size: 1.7vw;
+	text-align: left;
+}
+
+h1 {
+	font-size: 3vw;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2.1rem;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+h5 {
+	font-size: 1.5vw;
+	font-weight: bold;
+}
+
+h6 {
+	font-size: 1vw;
+	font-weight: bold;
+}
+
+small {
+	font-size: 0.6vw;
+}
+
+.credit-text {
+	font-size: 1.3vw;
+	text-indent: 1vw; /* Mixes vw and vh, consider standardizing */
+	line-height: 2;
+	text-align: justify;
+	color: var(--text-color);
+}
+
+.credit-text-small {
+	font-size: 1vw; /* Mixes vw and vh, consider standardizing */
+
+	font-family: "Noto Sans JP";
+	margin-left: 0.3vh;
+	line-height: 2;
+	text-indent: -0.3vh; /* Creates a hanging indent */
+	line-height: 1.2;
+}
+
+.credit-link {
+	cursor: pointer;
+	box-shadow: var(--box-shadow);
+}
+
+.credit-link:hover {
+	background-color: var(--link-hover-bg);
+}
+
+/* --- Component Styles --- */
+
+.item {
+	background-color: var(--bg-color);
+	/* background-image: linear-gradient(130deg, #bcb8c4 0%, #9da5c9 55%, #bcb8c4 100%); */
+	box-shadow: none;
+	color: var(--text-color);
+	border-radius: 0vw;
+	border: 0vw solid #171717;
+
+	display: inline-grid; /* Changed from flex */
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1vw;
+	font-weight: bold;
+}
+
+/* Combined .header and .footer styles */
+.header,
+.footer {
+	background-color: var(--bg-color);
+	background-image: linear-gradient(160deg, #eeedf1 0%, #3c1000 127%);
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5); /* Simplified shadow */
+	border: 0vw;
+	text-align: center;
+	border-radius: 0.15vw;
+	margin: 0.1vw;
+	align-items: center; /* Useful if display is flex/grid */
+	justify-content: center; /* Useful if display is flex/grid */
+}
+
+/* Buttons */
+.menu-button {
+	height: 6.2vw;
+	width: 6.2vw;
+	background-image: linear-gradient(160deg, #f0eff3 0%, #0e0135 127%);
+	border-radius: 0.15vw; /* Consistent radius */
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	color: var(--text-color);
+	font-family: "Klee One", cursive;
+	object-fit: contain; /* Useful for replaced elements like img inside */
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s, transform 0.2s; /* Added transform */
+}
+
+.menu-button:hover {
+	background-color: rgba(16, 3, 73, 0.884);
+	/* Suggestion: Use transform for scaling instead of changing dimensions */
+	/* to avoid layout shifts (reflow). */
+	/* height: 7vw; */
+	/* width: 7vw; */
+	transform: scale(1.1);
+}
+
+.menu-button-small {
+	height: 3.1vw;
+	width: 6.2vw;
+	background-image: linear-gradient(160deg, #f0eff3 0%, #0b0135 127%);
+	border-radius: 0.15vw; /* Consistent radius */
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	color: #f8f6ff;
+	font-family: "Klee One", cursive;
+	object-fit: contain;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s, transform 0.2s; /* Added transform */
+}
+
+.menu-button-small:hover {
+	background-color: rgba(28, 6, 124, 0.884);
+	/* Suggestion: Use transform for scaling */
+	/* height: 4vw; */
+	/* width: 7vw; */
+	transform: scale(1.1);
+}
+
+/* Image Buttons (Audio, QR, Left Menu) */
+/* Base class for common hover behavior (optional refactor) */
+.image-button-base {
+	box-shadow: var(--box-shadow);
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s; /* Added transform */
+	cursor: pointer; /* Indicate interactivity */
+}
+
+.image-button-base:hover {
+	/* Define a generic hover background or use specific ones below */
+	transform: scale(1.1); /* Use transform for scaling */
+}
+
+.audio-button-image {
+	/* extends .image-button-base */
+	box-shadow: var(--box-shadow);
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s;
+	cursor: pointer;
+	border-radius: 5vw; /* Large radius for circle */
+	max-height: 3vw;
+	max-width: 3vw;
+}
+
+.audio-button-image:hover {
+	background-color: rgba(173, 196, 255, 0.884);
+	transform: scale(1.1);
+	/* max-height: 3.3vw; */ /* Avoid changing dimensions */
+	/* max-width: 3.3vw; */
+}
+
+.audio-button-image-small {
+	/* extends .image-button-base */
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s;
+	cursor: pointer;
+	border-radius: 3vw; /* Large radius for circle */
+	max-height: 1.5vw;
+	max-width: 1.5vw;
+}
+
+.audio-button-image-small:hover {
+	background-color: rgba(181, 173, 255, 0.884);
+	transform: scale(1.1);
+	/* max-height: 2vw; */ /* Avoid changing dimensions */
+	/* max-width: 2vw; */
+}
+
+.qr-button-image {
+	/* extends .image-button-base */
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s;
+	cursor: pointer;
+	border-radius: 0vw;
+	max-height: 5.7vw;
+	max-width: 5.7vw;
+}
+
+.qr-button-image:hover {
+	background-color: rgba(189, 173, 255, 0.884);
+	transform: scale(1.02); /* Subtle scale for less jump */
+	/* max-height: 5.8vw; */
+	/* max-width: 5.8vw; */
+}
+
+.qr-button-image-large {
+	/* extends .image-button-base */
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s;
+	cursor: pointer;
+	border-radius: 0vw;
+	max-height: 10.5vw;
+	max-width: 10.5vw;
+}
+
+.qr-button-image-large:hover {
+	background-color: rgba(184, 173, 255, 0.884);
+	transform: scale(1.02); /* Subtle scale */
+	/* max-height: 10.7vw; */
+	/* max-width: 10.7vw; */
+}
+
+.left-menu-image {
+	/* extends .image-button-base */
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5); /* Slightly different shadow */
+	object-fit: contain;
+	transition: background-color 0.2s, transform 0.2s;
+	cursor: pointer;
+	border-radius: 0.1vw;
+	height: 2.7vw;
+	width: 2.7vw;
+	background-color: #dfdefd;
+}
+
+.left-menu-image:hover {
+	background-color: rgba(173, 178, 255, 0.884);
+	transform: scale(1.2); /* Larger scale */
+	/* height: 3.5vw; */
+	/* width: 3.5vw; */
+}
+
+/* Styled Links */
+a {
+	color: var(--link-text);
+	/*color: var(--text-color);  Default text color applies */
+	cursor: pointer;
+}
+
+a.button {
+	/* Makes <a> tags look like buttons */
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	color: initial; /* Or set a specific color */
+	/*color: var(--text-color);  Default text color applies */
+	cursor: pointer;
+}
+
+/* --- Left Sidebar Specific Content --- */
+
+.header-left {
+	height: 6vw;
+	width: 6vw;
+	z-index: 3; /* Ensure it's above sidebar background? */
+	margin: 0.5vw;
+	background: none; /* Explicitly no background */
+}
+
+.left-menu {
+	display: flex;
+	align-items: center;
+	/* justify-content: space-between; */ /* This spreads items out, center might be intended */
+	justify-content: center; /* If buttons should be centered */
+	flex-direction: column;
+	grid-gap: 0.5vw;
+	padding: 0vw;
+	margin: 0.5vw;
+	margin-bottom: 1vw;
+	height: 37.25vw; /* Specific height */
+	width: 100%; /* Take full width of sidebar area */
+}
+
+.footer-left-top {
+	height: 3vw;
+	width: 6vw;
+	z-index: 4;
+	margin: 0.5vw;
+	background: none;
+}
+.footer-left-bottom {
+	height: 3vw;
+	width: 6vw;
+	z-index: 4;
+	margin: 0.5vw;
+	background: none;
+}
+
+.left-menu-button {
+	/* Container for the menu image, if needed */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.left-content {
+	padding: 0;
+	margin: 0;
+	height: inherit; /* Inherit height from container */
+	width: inherit; /* Inherit width */
+	border: 0vw;
+}
+
+.left-content-image {
+	height: inherit;
+	width: inherit;
+	padding: 0;
+	margin: 0;
+	border: 0vw;
+	object-fit: contain;
+	display: block; /* Removes extra space below image */
+}
+
+/* --- Utility Classes --- */
+
+.center-items {
+	display: flex;
+	justify-content: flex-start; /* Correct value for left alignment */
+	align-items: center;
+	background-color: var(--bg-color);
+	border: none;
+	color: var(--text-color);
+	font-family: "Klee One"; /* Already default, but explicit */
+	border-radius: 0.8vw; /* Removed duplicate */
+	padding: 0.5vw;
+}
+
+.right-nav-buttons {
+	height: 5vw;
+	width: 10vw;
+	justify-content: flex-start; /* Correct value */
+	background-color: rgba(255, 255, 255, 0.308);
+	box-shadow: var(--box-shadow);
+	/* Assumes display: flex/grid is set on parent or here */
+}
+
+.hidden-fill-image {
+	opacity: 0;
+	height: inherit;
+	width: inherit;
+	padding: 0;
+	margin: 0;
+	object-fit: fill;
+	display: block;
+	border: 0vw;
+	border-radius: 0vw;
+}
+
+/* Float-based Columns (Consider Flexbox/Grid for modern layouts) */
+.row > .column {
+	padding: 0 0.8vw;
+}
+
+.row:after {
+	/* Float clearfix */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	width: 25%; /* Example: 4 columns */
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+/* --- Audio and Video Controls --- */
+audio {
+	display: block;
+	position: absolute;
+	width: 20vw;
+	height: 3.3vh;
+	top: 2.4vh; /* Adjust positioning */
+	left: calc(15px + 11vw);
+
+	z-index: 10; /* Ensure controls are above other content */
+
+	color: var(--text-color); /* Match close button style */
+	background-color: var(--bg-color); /* Match close button style */
+
+	cursor: pointer;
+	transition: color 0.2s;
+	z-index: 10; /* Ensure it's above other content */
+}
+
+audio controls {
+	background-color: var(--bg-color); /* Match close button style */
+	color: var(--text-color); /* Match close button style */
+	border-radius: 0.5vw; /* Rounded corners for controls */
+	box-shadow: var(--box-shadow); /* Shadow for depth */
+	padding: 0.5vw; /* Padding for aesthetics */
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Media Queries --- */
+
+/* Landscape Orientation (Default styles seem landscape-first, so this might refine) */
+@media screen and (orientation: landscape) {
+	/* Styles specific to landscape */
+	/* Example: You might adjust grid columns or container sizes here */
+	/* The original rule is kept for reference, but check if #container base styles suffice */
+	#container {
+		height: 100vh; /* Full height of viewport */
+		/* width: 100vw; */ /* Already set */
+		/* max-width: 177.77vh; */ /* Aspect ratio constraint using vh */
+		/* height: 56.25vw; */ /* Already set */
+		/* max-height: 100vh; */ /* Already set */
+	}
+}
+
+/* Smaller Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+	#icon-nav {
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: auto;
+		width: 100%;
+		height: 55px;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 5px;
+		padding-right: 5px;
+		gap: 1px;
+	}
+
+	#icon-nav a,
+	#icon-nav button {
+		font-size: 18px;
+
+		padding: 3px;
+		border-radius: 3px;
+
+		width: 15px;
+		height: 15px;
+		flex-shrink: 0;
+		box-shadow: var(--box-shadow);
+	}
+
+
+	h1 {
+		font-size: 3vw;
+		font-weight: bold;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	
+	h3 {
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+
+
+	#theme-toggle,
+	#snow-toggle {
+		margin-top: 0;
+	}
+	#hero {
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-top: 0px; /* Nav height + gap */
+	}
+	#prev-slide {
+		left: 10px;
+		padding: 8px 12px;
+		font-size: 20px;
+	}
+	#next-slide {
+		right: 10px;
+		padding: 8px 12px;
+		font-size: 20px;
+	}
+	#hero h2 {
+		font-size: 1.8rem;
+	}
+	#hero p {
+		font-size: 1rem;
+	}
+
+	#container {
+		/* Adjust the grid layout for mobile */
+		grid-template-columns: 1fr; /* Single column for vertical layout */
+		grid-template-rows: 60px auto auto auto; /* Define rows based on content */
+		grid-template-areas:
+			"sidebar-left"
+			"content-center"
+			"gap-left"
+			"sidebar-right"; /* Adjust order as needed */
+		/* You might want to add a vertical gap if desired */
+		grid-row-gap: 0px; /* Example vertical gap */
+		height: 100vh; /* Full height of viewport */
+	}
+
+	/* You might need to adjust styles for the sidebar and content for the vertical layout */
+	#container .sidebar-left {
+		/* Styles for the top sidebar in vertical layout */
+		width: 100%; /* Make it full width */
+		height: 60px;
+		padding-top: 1vh;
+	}
+
+	#container .gap-left {
+		/* Styles for the gap in vertical layout (might be less relevant or removed) */
+		display: none; /* Example: hide the gap in vertical layout */
+		height: 0vh;
+	}
+
+	#container .content-center {
+		/* Styles for the content in vertical layout */
+		height: 83vh;
+	}
+
+	/* You might need to adjust styles for the sidebar and content for the vertical layout */
+	#container .sidebar-right {
+		/* Styles for the top sidebar in vertical layout */
+		width: 100%; /* Make it full width */
+		height: 10vh;
+		flex-direction: row;
+		background-color: var(--bg-color-divs);
+
+		justify-content: center;
+
+		padding-top: 1vh; /* Moved from .sidebar */
+		gap: 3vw; /* Added gap between items */
+	}
+
+	#prev-portrait {
+		left: calc(0px + 15px);
+	}
+	#next-portrait {
+		right: calc(0px + 15px);
+	}
+	.credit-text {
+		font-size: xxx-small;
+		line-height: 1;
+		text-align: justify;
+		color: var(--text-color);
+	}
+
+	.credit-text-small {
+		font-size: xxx-small;
+		line-height: 1;
+	}
+
+	audio {
+		top: calc(5px + 4rem); /* Adjust positioning */
+		font-size: 10px; /* Match close button size - 2.5vw;*/
+		width: 60vw;
+	}
+}

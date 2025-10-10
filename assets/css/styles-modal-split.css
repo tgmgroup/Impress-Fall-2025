@@ -1,0 +1,25 @@
+.modal-parent {
+    display: flex;
+    width: 100%; /* Inherit width from parent container */
+    height: 100%; /* Inherit height from parent container */
+    background-color: #f0f0f0; /* Optional: Add a background to visualize the parent */
+    overflow: hidden;
+    /*max-height: 74vh;*/
+}
+
+
+
+.modal-left-side {
+    background-color: #eef0e3; /* Optional: Add a background color */
+    flex: 1; 
+    padding: 0; /* Optional: Add some padding */
+    overflow: hidden;
+
+}
+
+.modal-right-side {
+    background-color: #f8f8da; /* Optional: Add a background color */
+    flex: 3; 
+    padding: 0; /* Optional: Add some padding */
+    overflow: hidden;
+}

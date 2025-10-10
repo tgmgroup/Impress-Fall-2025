@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Impress Magazine - Fall, 2025</title>
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		<link rel="icon" type="image/x-icon" href="/assets/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
+
+		<link href="/assets/css/styles-modal.css" rel="stylesheet" />
+
+		<script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem("theme");
+					const prefersDark = window.matchMedia(
+						"(prefers-color-scheme: dark)"
+					).matches;
+					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+						document.documentElement.classList.add("dark");
+					} else if (savedTheme === "light") {
+						document.documentElement.classList.remove("dark");
+					} else {
+						// Default to dark if nothing set and system isn't dark
+						document.documentElement.classList.add("dark");
+					}
+				} catch (e) {
+					console.error("Error applying initial theme class:", e);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<nav id="icon-nav">
+			<a
+				href="https://impress.isesaki.in"
+				aria-label="Impress Magazine Gallery"
+				class="slide-nav-trigger"
+				data-target-slide="slide-alpha"
+				>&#128213;</a
+			>
+			<a
+				href="index.html"
+				aria-label="Front Cover"
+				class="slide-nav-trigger"
+				data-target-slide="slide-beta"
+				>&#x23EA;</a
+			>
+			<a href="1.html" aria-label="1">&#x0031;</a>
+			<a href="1.html" aria-label="2">&#x0032;</a>
+			<a href="3.html" aria-label="3">&#x0033;</a>
+			<a href="3.html" aria-label="4">&#x0034;</a>
+			<a href="5.html" aria-label="5">&#x0035;</a>
+			<a href="5.html" aria-label="6">&#x0036;</a>
+			<a href="cover.html" aria-label="Back Cover">&#x23E9;</a>
+			<a href="about.html" aria-label="About">&#128209;</a>
+			<button id="theme-toggle" aria-label="Switch theme"></button>
+
+			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+		</nav>
+
+		<main id="hero">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left"></div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					id="page-content"
+					style="
+						background-image: url('/assets/Web/page07.jpg');
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+					"
+					data-page-number="7"
+					data-prev-page="5.html"
+					data-next-page="about.html"
+					data-landscape-bg="/assets/Web/page07.jpg"
+				>
+					<div class="left-content">
+						<div class="items hidden-text" id="text1-1">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="text-container">
+									<div class="modal-header">
+										<span
+											class="close clickable"
+											onClick="ResetPlayAndShowWithNav('audio1-1', 'text1-1', 'play1-1', 'prev-portrait', 'next-portrait'), ResetPlayAndShowWithNav('audio1-1a', 'text1-1', 'play1-1a', 'prev-portrait', 'next-portrait')"
+											>&times;</span
+										>
+										<span
+											class="modal-play-left clickable"
+											onClick="PlaySoundWithControls('audio1-1a', 'play1-1a')"
+											><img
+												id="play1-1a"
+												class="audio-button-image clickable"
+												src="/assets/nav-images/play-g79150a13d_1280.png"
+										/></span>
+									</div>
+
+									<div class="modal-body">
+										<h3>Closing</h3>
+										<p
+											style="
+												font-size: 4vh;
+												text-align: left;
+												text-indent: 0.9vw;
+												margin: 0.1vh;
+												line-height: 2;
+												text-align: justify;
+											"
+										>
+											That's it for this issue of <i>Impress</i>. We hope you
+											enjoyed it. Did you try the puzzles? If you get stuck, you
+											can find the answers on our website. And try answering the
+											reading questions for the long articles, too!
+										</p>
+										<p
+											style="
+												font-size: 4vh;
+												text-align: left;
+												text-indent: 0.9vw;
+												margin: 0.1vh;
+												line-height: 2;
+												text-align: justify;
+											"
+										>
+											If you have any ideas, suggestions, questions, or
+											comments, use the contact form in this app or on our
+											website and send them in! We're always happy to hear from
+											you.
+										</p>
+									</div>
+									<div class="modal-footer"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Audio for Intro Text -->
+
+						<audio id="audio1-1" class="playondemand">
+							<!-- empty audio, just used to open the modal -->
+							<source src="./assets/audio/audio7-0.mp3" type="audio/mp3" />
+						</audio>
+
+						<audio
+							id="audio1-1a"
+							class="playondemand"
+							controls
+							style="display: none"
+						>
+							<source src="./assets/audio/audio7-1.mp3" type="audio/mpeg" />
+							Your browser does not support the audio element.
+						</audio>
+					</div>
+				</div>
+
+				<div class="item sidebar sidebar-right">
+					<!-- Buttons -->
+					<button
+						class="center-items right-nav-buttons clickable"
+						type="button"
+						onClick="PlayAndShowWithNav('audio1-1', 'text1-1', 'play1-1', 'prev-portrait', 'next-portrait')"
+					>
+						<img
+							id="play1-1"
+							class="audio-button-image clickable"
+							src="/assets/nav-images/play-g79150a13d_1280.png"
+						/>
+						<h6 style="margin: auto">Closing</h6>
+					</button>
+
+					<form
+						action="https://sites.google.com/isesaki-school.ed.jp/impress-summer-2025"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-2"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Materials for This Issue</h6>
+						</button>
+					</form>
+
+					<form
+						action="https://sites.google.com/isesaki-school.ed.jp/impress/contact"
+						method="get"
+						target="_blank"
+					>
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="submit"
+						>
+							<img
+								id="play1-3"
+								class="audio-button-image clickable"
+								src="/assets/nav-images/link.png"
+							/>
+							<h6 style="margin: auto">Contact Us</h6>
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<button id="prev-portrait" aria-label="Previous Slide">&lt;</button>
+			<button id="next-portrait" aria-label="Next Slide">&gt;</button>
+		</main>
+
+		<canvas id="snowfall"></canvas>
+
+		<script src="/assets/scripts/scripts-snow.js" defer></script>
+		<script src="/assets/scripts/scripts-magazine-nav.js"></script>
+	</body>
+</html>

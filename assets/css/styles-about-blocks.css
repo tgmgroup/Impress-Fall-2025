@@ -1,0 +1,27 @@
+.about-grid-container {
+	align-items: stretch;
+	gap: 2vw; /* Adjust the gap between blocks */
+	background-color: var(--bg-color-text-divs);
+
+	padding: 3vw;
+	font-family: "Klee One";
+}
+
+.about-grid-item {
+	/*background-color: #000000, 0; */ /* Background color for blocks */
+	background-color: var(--bg-color-text-divs); /* Background color for blocks */
+	/* border: 1px solid #cccccc0f;  Border around blocks */
+	border-radius: 0.5vw; /* Rounded corners for blocks */
+	padding: 5px;
+
+	box-shadow: var(--box-shadow); /* Box shadow for depth */
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.15s;
+
+	align-items: left;
+	text-align: left;
+
+	tab-size: 2vw;
+}
