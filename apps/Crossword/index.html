@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Crossword Puzzle</title>
+		<link rel="icon" type="image/x-icon" href="/assets/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		/>
+		<!--Use this code to embed jquery if necessary: <script src="assets/scripts/jquery.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+		<script src="assets/scripts/crossword.js"></script>
+	</head>
+	<body>
+
+
+		<div class="screen" id="game">
+			<div id="container">
+				<div id="ttscontainer" style="overflow: auto; text-align: left">
+					<div id="crossword"></div>
+				</div>
+				<div class="cluebox">
+					<p style="padding: 1em; margin-bottom: 0px">
+						Let's practice using our vocabulary!
+					</p>
+					<hr class="solid">
+					<table class= "clues" id="clues">
+						<tbody>
+							<tr>
+								<th><b>Across</b></th>
+								<td><ul id="across"></ul></td>
+							</tr>
+							
+							<tr>
+								<th><b>Down</b></th>
+								<td><ul id="down"></ul></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<button onclick="toggleAnswer()">
+				<i class="fa fa-eye"></i> Show Answers
+			</button>
+			<button onclick="location.reload()">
+				<i class="fa fa-refresh"></i> Another Crossword
+			</button>
+
+			<div id="vkeyboard">
+				<h3>Enter Correct Answer</h3>
+				<div id="kbtnlist"></div>
+				<button onclick="$('#vkeyboard').hide()">
+					<i class="fa fa-times"></i> Close
+				</button>
+			</div>
+		</div>
+
+		<div id="appbar">
+			<span class="abitem" onclick="toggledrawer()"
+				><i class="fa fa-bars"></i
+			></span>
+			<span class="abitem" style="text-align: center; padding-left: 0px"
+				>Crossword Puzzle</span
+			>
+			<span class="abitem" style="float: right" onclick="location.reload()"
+				><i class="fa fa-refresh"></i
+			></span>
+			<span class="abitem" style="float: right" onclick="toggleAnswer()"
+				><i class="fa fa-eye"></i
+			></span>
+		</div>
+		<div id="drawer">
+			<p style="padding: 1em">Choose how much words in a single game level:</p>
+			<div class="ditem" onclick="setqcount(15)">
+				<i class="fa fa-pencil" style="color: #2a797a"></i> 15 Words
+			</div>
+			<div class="ditem" onclick="setqcount(10)">
+				<i class="fa fa-pencil" style="color: #2a797a"></i> 10 Words
+			</div>
+			<div class="ditem" onclick="setqcount(5)">
+				<i class="fa fa-pencil" style="color: #2a797a"></i> 5 Words
+			</div>
+		</div>
+		<script src="clues.js"></script>
+	</body>
+</html>

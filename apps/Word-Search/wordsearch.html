@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Word Search Game</title>
+		<link rel="icon" type="image/x-icon" href="../../assets/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="../../assets/nav-images/logo.png" />
+	</head>
+	<body>
+		<div class="header">
+			<h3 id="instructions"></h3>
+		</div>
+		<!-- <h3 id = "themeIntro">The theme is: <span id = "wordTheme"></span></h3> -->
+		<div class="container" id="container">
+			<div class="wordboardcontainer" id="wordboard"></div>
+			<div class="wordlistcontainer">
+				<div class="wordlist" id="wordlist"></div>
+				<button id="solveButton" type="button">See the Answers</button>
+				<button id="newGameButton" type="button">New Game</button>
+			</div>
+		</div>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/wordsearch.css" />
+
+		<script src="assets/js/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script src="assets/js/wordpaths.js"></script>
+		<script src="assets/js/wordsearchcontroller.js"></script>
+		<script src="assets/js/wordsearchlogic.js"></script>
+		<script src="assets/js/wordsearchview.js"></script>
+
+		<script>
+			$(document).ready(function () {
+				new WordSearchController(
+					"#wordboard",
+					"#wordlist",
+					"#solveButton",
+					"#newGameButton",
+					"#instructions",
+					"#wordTheme"
+				);
+			});
+		</script>
+	</body>
+</html>

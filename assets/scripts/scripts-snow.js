@@ -79,17 +79,28 @@ const snowFall = (() => {
     //----------------------------------
     // Constants
     //----------------------------------
-    const FLAKE_FREQUENCY = 7;
-    const FLAKE_MIN_SPEED = 30;
-    const FLAKE_MAX_SPEED = 180;
-    const FLAKE_SIZE_NOISE = 0.5;
-    const FLAKE_MIN_SIZE = 0.4;
-    const FLAKE_MAX_SIZE = 1.6;
+    const FLAKE_FREQUENCY = 2;
+    const FLAKE_MIN_SPEED = 10;
+    const FLAKE_MAX_SPEED = 100;
+    const FLAKE_SIZE_NOISE = 0.9;
+    const FLAKE_MIN_SIZE = 0.1;
+    const FLAKE_MAX_SIZE = 2;
     const FLAKE_FRICTION = 0.035;
     const FLAKE_NOISE_X = 0.07;
     const FLAKE_NOISE_Y = 0.02;
     const PI = Math.PI;
     const FPS = 60;
+    // const FLAKE_FREQUENCY = 7;
+	// const FLAKE_MIN_SPEED = 30;
+	// const FLAKE_MAX_SPEED = 180;
+	// const FLAKE_SIZE_NOISE = 0.5;
+	// const FLAKE_MIN_SIZE = 0.4;
+	// const FLAKE_MAX_SIZE = 1.6;
+	// const FLAKE_FRICTION = 0.035;
+	// const FLAKE_NOISE_X = 0.07;
+	// const FLAKE_NOISE_Y = 0.02;
+	// const PI = Math.PI;
+	// const FPS = 60;
 
     //----------------------------------
     // Objects (Point, Vector, Particle, Flake - simplified)
@@ -206,7 +217,7 @@ const snowFall = (() => {
             ctx.beginPath();
             ctx.arc(this.position.x, this.position.y, this.size, 0, 2 * PI);
             // You might want to tie this to the theme later
-            ctx.fillStyle = "yellow"; // ctx.fillStyle = "white";
+            ctx.fillStyle = "orange"; // ctx.fillStyle = "white";
             ctx.fill();
         }
     }

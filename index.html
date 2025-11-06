@@ -15,6 +15,7 @@
 		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
 
 		<link href="/assets/css/styles-modal.css" rel="stylesheet" />
+		<link href="/assets/css/styles-audio-player.css" rel="stylesheet" />
 		<!-- Unused stylesheets for now -->
 		<!-- 
 		<link href="styles-slideshow.css" rel="stylesheet" />
@@ -25,6 +26,7 @@
 		-->
 
 		<script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
 		<script>
 			(function () {
@@ -112,15 +114,11 @@
 										<span
 											class="modal-play-left clickable"
 											onClick="PlaySoundWithControls('audio1-1a', 'play1-1a')"
-											><img
-												id="play1-1a"
-												class="audio-button-image clickable"
-												src="/assets/nav-images/play-g79150a13d_1280.png"
-										/></span>
+											></span>
 									</div>
 
 									<div class="modal-body">
-										<h3>About This Issue</h3>
+										<h3>Introduction</h3>
 										<p
 											style="
 												font-size: 1.5rem;
@@ -131,9 +129,13 @@
 												text-align: justify;
 											"
 										>
-											Hello, this is George, and thanks for reading this
-											<i>Fall, 2025</i> issue of <i>Impress</i>.
+											In the United States, there’s a strong focus on
+											self-discovery — on figuring out who we are and chasing
+											our biggest dreams. We’re often encouraged to find that
+											perfect job or build the ideal future. It’s all part of
+											what we call the American Dream.
 										</p>
+
 										<p
 											style="
 												font-size: 1.5rem;
@@ -144,13 +146,12 @@
 												text-align: justify;
 											"
 										>
-											In this issue, we play with words with puzzles and puns
-											from Nick and myself. We learn about slang with some
-											examples from the Yotsuba Gakuen English Club. And we
-											learn about <i>haniwa</i> with Alice and the staff from
-											the Akabori Museum of History. There's a cool rooster you
-											can check out there.
+											But life isn’t always that simple. Maybe we have a dream,
+											and maybe we have some idea of who we are right now. But a
+											year from now? Our dreams might change. We might discover
+											something new about ourselves.
 										</p>
+
 										<p
 											style="
 												font-size: 1.5rem;
@@ -161,15 +162,81 @@
 												text-align: justify;
 											"
 										>
-											Our hot summer is almost over and autumn is coming, so we
-											hope you enjoy the last of the summer heat with this
-											issue. See you back in school soon! Enjoy reading this
-											issue, and please let us know what you think about it! Use
-											your comment form to send us comments and ideas for the
-											next issue. We're always glad to hear from you.
+											And that’s OK, because life isn’t just one big picture.
+											Life is a puzzle, made up of many different pieces. As we
+											grow, learn, and experience more, we collect new pieces,
+											and the picture begins to change. At twelve, your puzzle
+											might look like an Olympic track star. At twenty, it could appear to be a 
+											math teacher. And at fifty, maybe it starts to seem like a
+											CEO.
+										</p>
+
+										<p
+											style="
+												font-size: 1.5rem;
+												text-align: left;
+												text-indent: 1rem;
+												margin: 0.1vh;
+												padding: 1vh;
+												text-align: justify;
+											"
+										>
+											So don’t worry too much about what the final picture will
+											be. Instead, focus on getting as many pieces as you can.
+											If you do, your dream — even if it’s not the one you
+											started with — will start to take shape, and it just might
+											come true.<br />
+										</p>
+
+										<p
+											style="
+												font-size: 1.5rem;
+												text-align: left;
+												text-indent: 1rem;
+												margin: 0.1vh;
+												padding: 1vh;
+												text-align: right;
+											"
+										>
+											-- George
 										</p>
 									</div>
-									<div class="modal-footer"></div>
+
+									<div class="modal-footer">
+										<div class="audio-player">
+											<button class="audio-button" id="playPauseBtn">▶️</button>
+											<audio
+												id="playAudio"
+												src="assets/audio/audio0-1.mp3"
+												type="audio/mp3"
+											></audio>
+											<canvas id="waveform" class="waveform-canvas"></canvas>
+											<div class="time">
+												<span id="currentTime">0:00</span>
+												<span id="duration">0:00</span>
+											</div>
+											<div class="controls">
+												<label>🔊</label>
+												<input
+													type="range"
+													id="volume"
+													min="0"
+													max="1"
+													step="0.05"
+													value="1"
+												/>
+												<label>⏩</label>
+												<input
+													type="range"
+													id="speed"
+													min="0.5"
+													max="2"
+													step="0.05"
+													value="1"
+												/>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -209,7 +276,7 @@
 					</button>
 
 					<form
-						action="https://sites.google.com/isesaki-school.ed.jp/impress-summer-2025"
+						action="https://in.isesaki.in/impress-fall-2025"
 						method="get"
 						target="_blank"
 					>
@@ -254,5 +321,10 @@
 
 		<script src="/assets/scripts/scripts-snow.js" defer></script>
 		<script src="/assets/scripts/scripts-magazine-nav.js"></script>
+
+		<script
+			type="text/javascript"
+			src="/assets/scripts/scripts-audio-player.js"
+		></script>
 	</body>
 </html>

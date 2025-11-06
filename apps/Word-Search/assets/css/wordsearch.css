@@ -1,0 +1,336 @@
+/* ==========================================================================
+   1. FONT SETUP
+   ========================================================================== */
+
+@font-face {
+	font-family: "Klee One";
+	src: url("../../../../assets/font/kleeone_regular.ttf") format("truetype");
+	font-display: swap; /* Improves perceived performance */
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("../../../../assets/font/NotoSansJP-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap; /* Improves perceived performance */
+}
+
+/* ==========================================================================
+   3. GLOBAL RESETS & BASE STYLES
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0; /* Reset margins */
+	padding: 0; /* Reset paddings */
+	box-sizing: border-box;
+}
+
+/* --- Theme Variables --- */
+:root {
+	/* Light Mode Colors */
+	--bg-color: #f8f8f8;
+	--bg-color-divs: #f8f8f8;
+	--button-bg-color: #f5f6b9;
+	--border-style: 2px black solid;
+	--border-radius: 8px;
+
+	--cell-highlight-color: #f8f8f8;
+	--cell-highlight-color-hover: rgb(210, 141, 242);
+	--cell-highlight-color-selectable: rgb(230, 206, 234);
+	--cell-highlight-color-selected: rgb(169, 90, 205);
+	--cell-highlight-color-found: rgb(147, 123, 158);
+	--cell-highlight-color-found-border: 1px black solid;
+	--cell-border: 0px rgba(255, 255, 255, 0.849);
+
+	--wordlist-color-found: rgb(62, 17, 78);
+
+	--box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.015),
+		0 6px 20px 0 rgba(0, 0, 0, 0.015);
+	--text-color: #333333; /* Dark text for light mode */
+	--bg-image: linear-gradient(203deg, #ffc3fbbe 0%, #e4a8fab8 30%);
+	--nav-icon-color: #555555;
+	--link-text: #171418;
+	--link-hover-bg: #ffffffc2;
+}
+
+html.dark {
+	/* Dark Mode Colors */
+	--bg-color: #1a1a1a;
+	--bg-color-divs: #080707;
+
+	--button-bg-color: #1a1a1a;
+	--border-style: 2px rgb(218, 218, 218) solid;
+	--border-radius: 8px;
+
+	--cell-highlight-color: #0c0c0c;
+	--cell-highlight-color-hover: rgb(17, 30, 17);
+	--cell-highlight-color-selectable: rgb(27, 31, 28);
+	--cell-highlight-color-selected: rgb(23, 50, 24);
+	--cell-highlight-color-found: rgb(35, 45, 36);
+	--cell-highlight-color-found-border: 1px rgb(215, 209, 209) solid;
+	--cell-border: 1px rgba(11, 11, 11, 0.849);
+
+	--wordlist-color-found: rgb(46, 59, 49);
+
+	--box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.015),
+		0 6px 20px 0 rgba(255, 255, 255, 0.015);
+	--text-color: #e0e0e0; /* Light text for dark mode */
+
+	---bg-image: linear-gradient(203deg, #28052d 0%, #0b000d 90%);
+	--nav-icon-color: #b0b0b0;
+	--link-text: #f6dbff;
+	--link-hover-bg: #000000ac;
+}
+/* --- End Theme Variables --- */
+
+/* --- Base Styles --- */
+
+* {
+	text-align: center;
+	font-family: "Klee One", Arial, sans serif;
+	font-weight: bold;
+}
+
+#wordTheme,
+#solveButton,
+#newGameButton,
+.listWord {
+	padding: 5px;
+}
+
+#wordTheme,
+#solveButton,
+#newGameButton {
+	border: var(--border-style);
+	border-radius: var(--border-radius);
+}
+
+.cell,
+#wordTheme,
+#wordlist {
+	background-color: var(--bg-color);
+}
+
+/* --- Main Background Color --- */
+body {
+	background-image: var(--bg-image);
+	background-size: 200% 200%;
+
+	max-width: 100vw;
+	max-height: 100vh;
+	height: 100vh;
+	width: 100vw;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.header {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: 20px;
+	font-weight: bold;
+	max-width: 100vw;
+	padding: 10px;
+	margin: 10px auto 10px auto;
+	border: var(--border-style);
+	border-radius: var(--border-radius);
+}
+
+#wordTheme {
+	border-radius: var(--border-radius);
+}
+
+#wordboard {
+	margin: 20px auto 0 auto;
+	border: var(--border-style);
+	border-radius: var(--border-radius);
+	display: table;
+	min-width: 600px;
+
+	padding: 1%;
+	background-color: var(--bg-color-divs);
+	color: var(--text-color-divs);
+}
+
+.boardRow {
+	display: table-row;
+}
+
+.cell {
+	margin: 0 auto;
+	border: var(--cell-border);
+	background-color: var(--cell-highlight-color);
+	display: table-cell;
+	height: 30px;
+	width: 30px;
+	font-size: 17px;
+	padding: 0;
+	outline: 0;
+
+	/*ensures text can't be accidentally selected*/
+	cursor: default;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+.cell:hover {
+	background-color: var(--cell-highlight-color-hover);
+}
+
+.cell.selectable {
+	background-color: var(--cell-highlight-color-selectable);
+}
+
+.cell.selected {
+	background-color: var(--cell-highlight-color-selected);
+}
+
+.cell.found {
+	background-color: var(--cell-highlight-color-found);
+	border: var(--cell-highlight-color-found-border);
+	font-weight: bold;
+}
+
+#wordlist {
+	margin: 40px auto 0 auto;
+
+	display: table;
+	min-width: 600px;
+	font-size: 17px;
+	text-align: center;
+	border: var(--border-style);
+	border-radius: var(--border-radius);
+	padding: 1%;
+}
+
+.listRow {
+	display: table-row;
+}
+
+.listWord {
+	display: table-cell;
+}
+
+.listWord.found {
+	color: var(--wordlist-color-found);
+	text-decoration: line-through;
+}
+
+#solveButton,
+#newGameButton {
+	background-color: var(--button-bg-color);
+	color: var(--text-color-divs);
+	margin: 20px auto 20px auto;
+	display: block;
+	outline: 0;
+	border: var(--border-style);
+	border-radius: var(--border-radius);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Klee One";
+	src: url("../../../font/kleeone_regular.ttf") format("truetype");
+	/*src: url("../assets/fonts/Moon-Regular.woff2") format("woff2"),
+		 url("../assets/fonts/Moon-Regular.woff") format("woff");*/
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Klee One";
+	src: url("../../../font/kleeone_semibold.ttf") format("truetype");
+	/*src: url("../assets/fonts/Moon-Bold.woff2") format("woff2"),
+		 url("../assets/fonts/Moon-Bold.woff") format("woff");*/
+	font-weight: bold;
+}
+
+#container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	flex-direction: column;
+	max-width: 100vw;
+	max-height: 100vh;
+	max-width: 100vw;
+	max-height: 100vh;
+	margin: 0 auto;
+	gap: 10px; /* Adjust the gap between blocks */
+}
+
+.wordboardcontainer {
+	display: flex;
+	font-family: "Klee One", Courier, monospace;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	flex: 1;
+	text-align: center;
+	vertical-align: middle;
+	padding: 10px;
+}
+
+.wordlistcontainer {
+	display: flex;
+	text-align: center;
+	vertical-align: middle;
+	flex-direction: column;
+	flex: 1;
+	margin-left: 0px; /* Adjust the margin as needed */
+}
+
+/* --- Media Queries --- */
+
+/* Landscape Orientation (Default styles seem landscape-first, so this might refine) */
+@media screen and (orientation: landscape) {
+	/* Styles specific to landscape */
+	/* Example: You might adjust grid columns or container sizes here */
+	/* The original rule is kept for reference, but check if #container base styles suffice */
+	#container {
+		flex-direction: row;
+	}
+}
+
+/* Medium Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 1260px) {
+	#container {
+		flex-direction: column;
+		min-width: 620px;
+	}
+}
+
+/* Smaller Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+	#container {
+		flex-direction: column;
+		min-width: 620px;
+		margin: 0px;
+	}
+	#wordboard {
+		padding: 0.5%;
+		margin: 0px;
+	}
+
+	.wordboardcontainer {
+		padding: 5px;
+		margin: 0px;
+	}
+
+	body {
+		padding: 1px;
+		margin: 0px;
+	}
+
+	header {
+		padding: 1px;
+		margin: 0px;
+	}
+}
