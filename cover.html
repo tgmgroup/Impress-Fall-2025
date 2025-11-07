@@ -102,18 +102,10 @@
 											onClick="ResetPlayAndShowWithNav('audio1-1', 'text1-1', 'play1-1', 'prev-portrait', 'next-portrait'), ResetPlayAndShowWithNav('audio1-1a', 'text1-1', 'play1-1a', 'prev-portrait', 'next-portrait')"
 											>&times;</span
 										>
-										<span
-											class="modal-play-left clickable"
-											onClick="PlaySoundWithControls('audio1-1a', 'play1-1a')"
-											><img
-												id="play1-1a"
-												class="audio-button-image clickable"
-												src="/assets/nav-images/play-g79150a13d_1280.png"
-										/></span>
 									</div>
 
 									<div class="modal-body">
-										<h3>Closing</h3>
+										<h1>Closing</h1>
 										<p
 											style="
 												font-size: 4vh;
@@ -124,10 +116,11 @@
 												text-align: justify;
 											"
 										>
-											That's it for this issue of <i>Impress</i>. We hope you
-											enjoyed it. Did you try the puzzles? If you get stuck, you
-											can find the answers on our website. And try answering the
-											reading questions for the long articles, too!
+											In this issue of <i>Impress</i>, we tried to do a few
+											things differently. Let us know if you like the changes!
+											As always, try the puzzles and challenges. You can find
+											the worksheets linked in our app or on our materials
+											website.
 										</p>
 										<p
 											style="
@@ -142,10 +135,44 @@
 											If you have any ideas, suggestions, questions, or
 											comments, use the contact form in this app or on our
 											website and send them in! We're always happy to hear from
-											you.
+											you. Thanks for reading <i>Impress</i>, and see you next
+											time!
 										</p>
 									</div>
-									<div class="modal-footer"></div>
+									<div class="modal-footer">
+										<div class="audio-player">
+											<button class="audio-button" id="playPauseBtn">▶️</button>
+											<audio
+												id="playAudio"
+												src="assets/audio/audio5-1.mp3"
+											></audio>
+											<canvas id="waveform" class="waveform-canvas"></canvas>
+											<div class="time">
+												<span id="currentTime">0:00</span>
+												<span id="duration">0:00</span>
+											</div>
+											<div class="controls">
+												<label>🔊</label>
+												<input
+													type="range"
+													id="volume"
+													min="0"
+													max="1"
+													step="0.05"
+													value="1"
+												/>
+												<label>⏩</label>
+												<input
+													type="range"
+													id="speed"
+													min="0.5"
+													max="2"
+													step="0.05"
+													value="1"
+												/>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

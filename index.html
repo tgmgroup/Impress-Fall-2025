@@ -14,13 +14,16 @@
 		<link rel="icon" type="image/x-icon" href="/assets/nav-images/logo.png" />
 		<link id="favicon" rel="shortcut icon" href="/assets/nav-images/logo.png" />
 
+		<link href="/assets/css/styles-tooltip.css" rel="stylesheet" />
 		<link href="/assets/css/styles-modal.css" rel="stylesheet" />
 		<link href="/assets/css/styles-audio-player.css" rel="stylesheet" />
+		
+
 		<!-- Unused stylesheets for now -->
 		<!-- 
 		<link href="styles-slideshow.css" rel="stylesheet" />
 		<link href="styles-slideshow-double.css" rel="stylesheet" />
-		<link href="styles-tooltip.css" rel="stylesheet" />
+		
 		<link href="styles-modal-split.css" rel="stylesheet" /> 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 		-->
@@ -114,86 +117,185 @@
 										<span
 											class="modal-play-left clickable"
 											onClick="PlaySoundWithControls('audio1-1a', 'play1-1a')"
-											></span>
+										></span>
 									</div>
 
 									<div class="modal-body">
-										<h3>Introduction</h3>
+										<h1>Introduction</h1>
 										<p
 											style="
-												font-size: 1.5rem;
+												font-size: 2rem;
 												text-align: left;
 												text-indent: 1rem;
-												margin: 0.1vh;
+												margin: 2rem;
 												padding: 1vh;
 												text-align: justify;
 											"
 										>
-											In the United States, there’s a strong focus on
-											self-discovery — on figuring out who we are and chasing
-											our biggest dreams. We’re often encouraged to find that
-											perfect job or build the ideal future. It’s all part of
-											what we call the American Dream.
+											<span class="tooltip"
+												>In the United States, there’s a strong focus on
+												self-discovery<span class="tooltiptext"
+													>アメリカでは、自己発見、つまり自分が何者なのかを理解し、</span
+												></span
+											> — 
+											<span class="tooltip"
+												>on figuring out who we are and chasing
+												our biggest dreams.<span class="tooltiptext"
+													>最大の夢を追いかけることに大きな重点が置かれています。</span
+												></span
+											>
+											<span class="tooltip"
+												>We’re often encouraged to find that perfect job or
+												build the ideal future.<span class="tooltiptext"
+													>私たちはしばしば、完璧な仕事を見つけたり、理想的な未来を築いたりするよう奨励されます。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>It’s all part of what we call the American Dream.<span
+													class="tooltiptext"
+													>これらは全て、いわゆるアメリカンドリームの一部です。</span
+												></span
+											>
 										</p>
 
 										<p
 											style="
-												font-size: 1.5rem;
+												font-size: 2rem;
 												text-align: left;
 												text-indent: 1rem;
-												margin: 0.1vh;
+												margin: 2rem;
 												padding: 1vh;
 												text-align: justify;
 											"
 										>
-											But life isn’t always that simple. Maybe we have a dream,
-											and maybe we have some idea of who we are right now. But a
-											year from now? Our dreams might change. We might discover
-											something new about ourselves.
+											<span class="tooltip"
+												>But life isn’t always that simple.<span
+													class="tooltiptext"
+													>しかし、人生は必ずしもそれほど単純ではありません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>Maybe we have a dream, and maybe we have some idea of
+												who we are right now.<span class="tooltiptext"
+													>夢を持っているかもしれませんし、今の自分が何者なのかをある程度理解しているかもしれません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>But a year from now?<span class="tooltiptext"
+													>しかし、1年後はどうでしょうか？</span
+												></span
+											>
+
+											<span class="tooltip"
+												>Our dreams might change.<span class="tooltiptext"
+													>夢は変わっているかもしれません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>We might discover something new about ourselves.<span
+													class="tooltiptext"
+													>自分自身について何か新しい発見をするかもしれません。</span
+												></span
+											>
 										</p>
 
 										<p
 											style="
-												font-size: 1.5rem;
+												font-size: 2rem;
 												text-align: left;
 												text-indent: 1rem;
-												margin: 0.1vh;
+												margin: 2rem;
 												padding: 1vh;
 												text-align: justify;
 											"
 										>
-											And that’s OK, because life isn’t just one big picture.
-											Life is a puzzle, made up of many different pieces. As we
-											grow, learn, and experience more, we collect new pieces,
-											and the picture begins to change. At twelve, your puzzle
-											might look like an Olympic track star. At twenty, it could appear to be a 
-											math teacher. And at fifty, maybe it starts to seem like a
-											CEO.
+											<span class="tooltip"
+												>And that’s OK, because life isn’t just one big
+												picture.<span class="tooltiptext"
+													>それでいいのです。なぜなら、人生はただ一つの大きな絵ではないからです。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>Life is a puzzle, made up of many different
+												pieces.<span class="tooltiptext"
+													>人生はパズルであり、様々なピースでできています。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>As we grow, learn, and experience more, we collect new
+												pieces, and the picture begins to change.<span
+													class="tooltiptext"
+													>成長し、学び、経験を積むにつれて、新しいピースが集まり、絵は変化し始めます。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>At twelve, your puzzle might look like an Olympic track
+												star.<span class="tooltiptext"
+													>12歳の時には、あなたのパズルはオリンピックの陸上競技選手のように見えるかもしれません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>At twenty, it could appear to be a math teacher.<span
+													class="tooltiptext"
+													>20歳には、数学の先生のように見えるかもしれません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>And at fifty, maybe it starts to seem like a CEO.<span
+													class="tooltiptext"
+													>そして50歳には、CEOのように見えるかもしれません。</span
+												></span
+											>
 										</p>
 
 										<p
 											style="
-												font-size: 1.5rem;
+												font-size: 2rem;
 												text-align: left;
 												text-indent: 1rem;
-												margin: 0.1vh;
+												margin: 2rem;
 												padding: 1vh;
 												text-align: justify;
 											"
 										>
-											So don’t worry too much about what the final picture will
-											be. Instead, focus on getting as many pieces as you can.
-											If you do, your dream — even if it’s not the one you
-											started with — will start to take shape, and it just might
-											come true.<br />
+											<span class="tooltip"
+												>So don’t worry too much about what the final picture
+												will be.<span class="tooltiptext"
+													>ですから、最終的な絵がどうなるかをあまり心配する必要はありません。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>Instead, focus on getting as many pieces as you
+												can.<span class="tooltiptext"
+													>むしろ、できるだけ多くのピースを集めることに集中しましょう。</span
+												></span
+											>
+
+											<span class="tooltip"
+												>If you do, your dream — even if it’s not the one you
+												started with — will start to take shape, and it just
+												might come true.<span class="tooltiptext"
+													>そうすれば、たとえそれが最初に思い描いていた夢でなくても、あなたの夢は形になり始め、実現するかもしれません。</span
+												></span
+											>
 										</p>
 
 										<p
 											style="
-												font-size: 1.5rem;
+												font-size: 2rem;
 												text-align: left;
 												text-indent: 1rem;
-												margin: 0.1vh;
+												margin: 2rem;
 												padding: 1vh;
 												text-align: right;
 											"

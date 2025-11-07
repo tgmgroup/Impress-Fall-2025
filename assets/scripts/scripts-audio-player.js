@@ -45,7 +45,7 @@ const formatTime = (secs) => {
 // Resize canvas
 function resizeCanvas() {
 	const rect = canvas.getBoundingClientRect();
-	canvas.width = rect.width * window.devicePixelRatio;
+	canvas.width = rect.width * window.devicePixelRatio * 0.8;
 	canvas.height = rect.height * window.devicePixelRatio;
 	ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 	drawWaveform(0);
