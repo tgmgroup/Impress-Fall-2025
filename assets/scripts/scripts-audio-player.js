@@ -50,8 +50,22 @@ function resizeCanvas() {
 	ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 	drawWaveform(0);
 }
+
+// Helper to reinitialize waveform once modal is visible
+function showWaveformWhenVisible() {
+	const rect = canvas.getBoundingClientRect();
+	if (rect.width > 0 && rect.height > 0) {
+		resizeCanvas();
+		if (peaks.length === 0) generateWaveform(srcUrl);
+	} else {
+		// Retry until modal is visible
+		requestAnimationFrame(showWaveformWhenVisible);
+	}
+}
+
 window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
+showWaveformWhenVisible();
+// resizeCanvas();
 
 // Generate waveform from real audio data
 async function generateWaveform(url) {

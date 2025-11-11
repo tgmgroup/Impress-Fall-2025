@@ -296,7 +296,7 @@ function ResetPlayAndShowGallery(audioSound, textDiv, audioImage) {
 
 function playHoverSoundOnClass(className) {
 	const elements = document.getElementsByClassName(className);
-	const hoverSound = new Audio("./audio/computerwav-14702A.mp3");
+	const hoverSound = new Audio("/assets/audio/computerwav-14702A.mp3");
 
 	Array.from(elements).forEach((element) => {
 		element.addEventListener("mouseover", () => {

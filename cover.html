@@ -18,6 +18,8 @@
 		<link href="/assets/css/styles-audio-player.css" rel="stylesheet" />
 
 		<script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+
 
 		<script>
 			(function () {
@@ -117,7 +119,9 @@
 											"
 										>
 											In this issue of <i>Impress</i>, we tried to do a few
-											things differently. Let us know if you like the changes!
+											things differently. We're trying to put together our own
+											<i>Impress</i>-shaped puzzle. Let us know what you think
+											about it!<br />
 											As always, try the puzzles and challenges. You can find
 											the worksheets linked in our app or on our materials
 											website.
@@ -135,8 +139,9 @@
 											If you have any ideas, suggestions, questions, or
 											comments, use the contact form in this app or on our
 											website and send them in! We're always happy to hear from
-											you. Thanks for reading <i>Impress</i>, and see you next
-											time!
+											you. Thanks for reading <i>Impress</i>, and remember that
+											it's better to put together the puzzle of life than let
+											life puzzle you.
 										</p>
 									</div>
 									<div class="modal-footer">
@@ -144,7 +149,8 @@
 											<button class="audio-button" id="playPauseBtn">▶️</button>
 											<audio
 												id="playAudio"
-												src="assets/audio/audio5-1.mp3"
+												src="assets/audio/audio7-1.mp3"
+												type="audio/mp3"
 											></audio>
 											<canvas id="waveform" class="waveform-canvas"></canvas>
 											<div class="time">
@@ -181,7 +187,7 @@
 
 						<audio id="audio1-1" class="playondemand">
 							<!-- empty audio, just used to open the modal -->
-							<source src="./assets/audio/audio7-0.mp3" type="audio/mp3" />
+							<source src="assets/audio/audio7-0.mp3" type="audio/mp3" />
 						</audio>
 
 						<audio
@@ -190,7 +196,7 @@
 							controls
 							style="display: none"
 						>
-							<source src="./assets/audio/audio7-1.mp3" type="audio/mpeg" />
+							<source src="assets/audio/audio7-1.mp3" type="audio/mpeg" />
 							Your browser does not support the audio element.
 						</audio>
 					</div>
@@ -257,5 +263,9 @@
 
 		<script src="/assets/scripts/scripts-snow.js" defer></script>
 		<script src="/assets/scripts/scripts-magazine-nav.js"></script>
+		<script
+			type="text/javascript"
+			src="/assets/scripts/scripts-audio-player.js"
+		></script>
 	</body>
 </html>
