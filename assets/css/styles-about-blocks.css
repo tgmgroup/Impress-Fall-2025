@@ -2,9 +2,17 @@
 	align-items: stretch;
 	gap: 2vw; /* Adjust the gap between blocks */
 	background-color: var(--bg-color-text-divs);
-
+	height: 100%;
 	padding: 3vw;
+	font-size: 3vh;
+	text-align: left;
+	text-indent: 0.9vw;
+	margin: 0.1vh;
+	line-height: 2;
+	text-align: justify;
 	font-family: "Klee One";
+	display: flex;
+	flex-direction: column;
 }
 
 .about-grid-item {
@@ -24,4 +32,54 @@
 	text-align: left;
 
 	tab-size: 2vw;
+}
+
+.credit-header {
+	font-size: 2rem;
+
+	line-height: 1.5;
+	text-align: justify;
+	color: var(--text-color);
+}
+.credit-text {
+	font-size: 1.1rem;
+	text-indent: 1rem;
+	line-height: 1.5;
+	text-align: justify;
+	color: var(--text-color);
+}
+.credit-list {
+	font-size: 1rem;
+	text-indent: 1rem;
+	line-height: 1;
+	text-align: justify;
+	margin: 1rem;
+	margin-left: 5rem;
+	color: var(--text-color);
+}
+
+.credit-text-small {
+	font-size: 0.8rem;
+
+	font-family: "Noto Sans JP";
+	margin-left: 0.3vh;
+	line-height: 2;
+	text-indent: -0.3vh; /* Creates a hanging indent */
+	line-height: 1.2;
+}
+
+.credit-link {
+	cursor: pointer;
+	box-shadow: var(--box-shadow);
+}
+
+.credit-link:hover {
+	background-color: var(--link-hover-bg);
+}
+
+/* Smaller Screens (Example: Tablets) (screens <= 768px) or Portrait Mode */
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+
+
+
 }
