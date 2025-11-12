@@ -1,5 +1,7 @@
 .about-grid-container {
 	align-items: stretch;
+	vertical-align: middle;
+	margin:auto;
 	gap: 2vw; /* Adjust the gap between blocks */
 	background-color: var(--bg-color-text-divs);
 	height: 100%;
@@ -7,7 +9,7 @@
 	font-size: 3vh;
 	text-align: left;
 	text-indent: 0.9vw;
-	margin: 0.1vh;
+	
 	line-height: 2;
 	text-align: justify;
 	font-family: "Klee One";
@@ -20,7 +22,7 @@
 	background-color: var(--bg-color-text-divs); /* Background color for blocks */
 	/* border: 1px solid #cccccc0f;  Border around blocks */
 	border-radius: 0.5vw; /* Rounded corners for blocks */
-	padding: 5px;
+	padding: .1rem;
 
 	box-shadow: var(--box-shadow); /* Box shadow for depth */
 	-webkit-animation-name: animatetop;
